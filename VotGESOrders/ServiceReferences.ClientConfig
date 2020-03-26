@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="CustomBinding_CranService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="../CranService.svc" binding="customBinding"
+                bindingConfiguration="CustomBinding_CranService" contract="CranService.CranService"
+                name="CustomBinding_CranService" />
+        </client>
+    </system.serviceModel>
+</configuration>

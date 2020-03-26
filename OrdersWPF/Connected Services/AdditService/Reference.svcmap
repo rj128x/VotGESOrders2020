@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7830f4be-d7ef-441f-b937-10a864554be5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8090/AdditService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AdditService.disco" MetadataType="Disco" ID="c639d819-b3cf-4fb1-bb04-6cc9fc8eb8b2" SourceId="1" SourceUrl="http://localhost:8090/AdditService.svc?disco" />
+    <MetadataFile FileName="AdditService.xsd" MetadataType="Schema" ID="3158bebf-cc0e-476d-9414-a0254f7ff784" SourceId="1" SourceUrl="http://localhost:8090/AdditService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AdditService1.xsd" MetadataType="Schema" ID="2ef69153-73e8-4f61-a54c-d2749efd0dd1" SourceId="1" SourceUrl="http://localhost:8090/AdditService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AdditService2.xsd" MetadataType="Schema" ID="269c7173-a32c-41ef-b034-c65cbeb36b4e" SourceId="1" SourceUrl="http://localhost:8090/AdditService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AdditService.wsdl" MetadataType="Wsdl" ID="3aa1211b-5408-410e-97b2-b64b9afb7b35" SourceId="1" SourceUrl="http://localhost:8090/AdditService.svc?wsdl" />
+    <MetadataFile FileName="AdditService1.wsdl" MetadataType="Wsdl" ID="82b5a31a-7885-4373-8e10-d082b83ddc16" SourceId="1" SourceUrl="http://localhost:8090/AdditService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

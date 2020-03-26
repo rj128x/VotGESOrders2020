@@ -1,0 +1,178 @@
+<navigation:Page xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  
+					  x:Class="VotGESOrders.EditUsers" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+					  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+					  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+					  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+					  xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" 
+					  xmlns:usr="clr-namespace:VotGESOrders.Views"
+					  mc:Ignorable="d" Title="Редактор справочника пользователей" Style="{StaticResource PageStyle}" 
+					  xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+					  d:DesignHeight="400" d:DesignWidth="850" >
+	
+	<Grid x:Name="LayoutRoot" VerticalAlignment="Stretch">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="3*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="25"/>
+		</Grid.RowDefinitions>
+		<sdk:DataGrid AutoGenerateColumns="False" Name="gridUsers" HorizontalAlignment="Stretch">
+			<sdk:DataGrid.Columns>
+				<sdk:DataGridTemplateColumn Header="Логин" SortMemberPath="Name" Width="1*">
+					<sdk:DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"/>
+						</DataTemplate>
+					</sdk:DataGridTemplateColumn.CellTemplate>
+				</sdk:DataGridTemplateColumn>
+				<sdk:DataGridTemplateColumn Header="Имя" SortMemberPath="FullName" Width="1*">
+					<sdk:DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding FullName}"/>
+						</DataTemplate>
+					</sdk:DataGridTemplateColumn.CellTemplate>
+				</sdk:DataGridTemplateColumn>
+				<sdk:DataGridTemplateColumn Header="Почта" SortMemberPath="Mail" Width="2*">
+					<sdk:DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Mail}" TextWrapping="Wrap"/>
+						</DataTemplate>
+					</sdk:DataGridTemplateColumn.CellTemplate>
+				</sdk:DataGridTemplateColumn>
+                <sdk:DataGridTemplateColumn Header="Псевдоним" SortMemberPath="AddLogins" Width="2*">
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding AddLogins}" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>
+                <sdk:DataGridTemplateColumn Header="Смежный пользователь" SortMemberPath="AddFinishLogins" Width="1*">
+                    <sdk:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding AddFinishLogins}" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </sdk:DataGridTemplateColumn.CellTemplate>
+                </sdk:DataGridTemplateColumn>               
+                <sdk:DataGridTemplateColumn Header="Операции" Width="130">
+					<sdk:DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" >
+								<Button Name="btnChangeItem" Content=" Изменить "   VerticalAlignment="Center" HorizontalAlignment="Center"  
+									  FontSize="12" Foreground="Blue" Margin="0,0,0,0" Padding="0,0,0,0"
+								 Height="20" Click="btnChangeItem_Click"
+										  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+								<Button Name="btnDeleteItem" Content=" Удалить "   VerticalAlignment="Center" HorizontalAlignment="Center" 
+									  FontSize="12" Foreground="Red" Margin="0,0,0,0" Padding="0,0,0,0"
+								  Height="20" Click="btnDeleteItem_Click"
+										  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>								
+							</StackPanel>
+						</DataTemplate>
+					</sdk:DataGridTemplateColumn.CellTemplate>
+				</sdk:DataGridTemplateColumn>				
+			</sdk:DataGrid.Columns>
+		</sdk:DataGrid>
+		<Border Style="{StaticResource borderFilterControl}" Grid.Column="1" Grid.Row="0">
+			<StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1">
+                    <Button Name="btnSave" Content="Сохранить" Click="btnSave_Click"
+							  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+                    <Button Name="btnCancel" Content="Отменить" Click="btnCancel_Click" 
+							  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+                </StackPanel>
+                <toolkit:DataForm Grid.Row="0" HorizontalAlignment="Stretch" Name="userForm" 
+								VerticalAlignment="Stretch" AutoGenerateFields="False"
+								CommandButtonsVisibility="None" IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}">
+                    <StackPanel>
+						<toolkit:DataField Name="Login" Label="Логин">
+							<TextBox Name="txtName" Text="{Binding Name, Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="FullName" Label="Имя">
+								<TextBox Name="txtFullName" Text="{Binding FullName, Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="Mail" Label="Почта">
+							<TextBox Name="txtMail" Text="{Binding Mail, Mode=TwoWay}"/>
+						</toolkit:DataField>
+                        <toolkit:DataField Name="AddLogins" Label="Псевдонимы" ToolTipService.ToolTip="Логины, которые определяются системой как данный пользователь">
+                            <TextBox Name="txtAddLogins" Text="{Binding AddLogins, Mode=TwoWay}"/>
+                        </toolkit:DataField>
+                        <toolkit:DataField Name="AddFinishLogins" Label="Смежные" ToolTipService.ToolTip="Могут закрыть/снять заявку данного пользователя">
+                            <TextBox Name="txtAddFinishLogins" Text="{Binding AddFinishLogins, Mode=TwoWay}"/>
+                        </toolkit:DataField>
+                        <toolkit:DataField Name="SendAllMail" Label="">
+							<CheckBox Content="Оповещать о всех событиях" IsChecked="{Binding SendAllMail,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="SendCreateMail" Label="">
+							<CheckBox Content="Оповещать о своих заявках" IsChecked="{Binding SendCreateMail,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="SendAgreeMail" Label="">
+							<CheckBox Content="Оповещать создании согласованных заявок" IsChecked="{Binding SendAgreeMail,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="SendAllCreateMail" Label="">
+							<CheckBox Content="Оповещать о создании всех заявок" IsChecked="{Binding SendAllCreateMail,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="SendAllAgreeMail" Label="">
+							<CheckBox Content="Оповещать о согласованных заявках" IsChecked="{Binding SendAllAgreeMail,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="AllowCreateOrder" Label="">
+							<CheckBox Content="Может создавать заявки" IsChecked="{Binding AllowCreateOrder,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="AllowCreateCrashOrder" Label="">
+							<CheckBox Content="Может создавать аварийные заявки" IsChecked="{Binding AllowCreateCrashOrder,Mode=TwoWay}"/>
+						</toolkit:DataField>						
+						<toolkit:DataField Name="AllowChangeOrder" Label="">
+							<CheckBox Content="Может открывать/закрывать заявки" IsChecked="{Binding AllowChangeOrder,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="AllowReviewOrder" Label="">
+							<CheckBox Content="Может рассматривать заявки" IsChecked="{Binding AllowReviewOrder,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="AllowEditTree" Label="">
+							<CheckBox Content="Может редактировать оборудование" IsChecked="{Binding AllowEditTree,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="AllowEditUsers" Label="">
+							<CheckBox Content="Может редактировать пользователей" IsChecked="{Binding AllowEditUsers,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="AllowEditOrders" Label="">
+							<CheckBox Content="Может редактировать заявки" IsChecked="{Binding AllowEditOrders,Mode=TwoWay}"/>
+						</toolkit:DataField>
+						<toolkit:DataField Name="AllowAgreeOrders" Label="">
+							<CheckBox Content="Может согласовывать заявки" IsChecked="{Binding AllowAgreeOrders,Mode=TwoWay}"/>
+						</toolkit:DataField>
+                        <toolkit:DataField Name="CanCreateCranTask" Label="">
+                            <CheckBox Content="Может создавать заявки на работу крана" IsChecked="{Binding CanCreateCranTask,Mode=TwoWay}"/>
+                        </toolkit:DataField>
+                        <toolkit:DataField Name="CanReviewCranTask" Label="">
+                            <CheckBox Content="Может рассматривать заявки на работу крана" IsChecked="{Binding CanReviewCranTask,Mode=TwoWay}"/>
+                        </toolkit:DataField>
+                        <toolkit:DataField Name="CanFinishCranTask" Label="">
+                            <CheckBox Content="Может закрывать заявки на работу крана" IsChecked="{Binding CanFinishCranTask,Mode=TwoWay}"/>
+                        </toolkit:DataField>
+
+                        <toolkit:DataField Name="SendAllCranTask" Label="">
+                            <CheckBox Content="Оповещать о движении всех заявок на кран" IsChecked="{Binding SendAllCranTask,Mode=TwoWay}"/>
+                        </toolkit:DataField>
+                        <toolkit:DataField Name="SendAllCreateCranTask" Label="">
+                            <CheckBox Content="Оповещать о создании всех заявок на кран" IsChecked="{Binding SendAllCreateCranTask,Mode=TwoWay}"/>
+                        </toolkit:DataField>
+
+                    </StackPanel>
+                </toolkit:DataForm>
+				
+                
+
+            </StackPanel>
+                
+                
+		</Border>
+		
+
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="0">
+			<Button Name="btnAddItem" Content="Добавить пользователя"   VerticalAlignment="Center"  HorizontalAlignment="Center" 
+									  Click="btnAddItem_Click" IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+			<Button Name="btnRefresh" Content="Обновить список (с сервера)" Click="btnRefresh_Click"
+							  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+		</StackPanel>
+	</Grid>
+
+</navigation:Page>

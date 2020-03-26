@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:8090/CranService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:8090/CranService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8090/CranService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VotGESOrders.Web.Models" />
+      <xsd:import schemaLocation="http://localhost:8090/CranService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CranService_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="DoWork" />
+  </wsdl:message>
+  <wsdl:message name="CranService_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="CranService_getCranTasks_InputMessage">
+    <wsdl:part name="parameters" element="getCranTasks" />
+  </wsdl:message>
+  <wsdl:message name="CranService_getCranTasks_OutputMessage">
+    <wsdl:part name="parameters" element="getCranTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="CranService_CreateCranTask_InputMessage">
+    <wsdl:part name="parameters" element="CreateCranTask" />
+  </wsdl:message>
+  <wsdl:message name="CranService_CreateCranTask_OutputMessage">
+    <wsdl:part name="parameters" element="CreateCranTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="CranService_CommentCranTask_InputMessage">
+    <wsdl:part name="parameters" element="CommentCranTask" />
+  </wsdl:message>
+  <wsdl:message name="CranService_CommentCranTask_OutputMessage">
+    <wsdl:part name="parameters" element="CommentCranTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="CranService_CancelCranTask_InputMessage">
+    <wsdl:part name="parameters" element="CancelCranTask" />
+  </wsdl:message>
+  <wsdl:message name="CranService_CancelCranTask_OutputMessage">
+    <wsdl:part name="parameters" element="CancelCranTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="CranService_FinishCranTask_InputMessage">
+    <wsdl:part name="parameters" element="FinishCranTask" />
+  </wsdl:message>
+  <wsdl:message name="CranService_FinishCranTask_OutputMessage">
+    <wsdl:part name="parameters" element="FinishCranTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="CranService_getLastUpdate_InputMessage">
+    <wsdl:part name="parameters" element="getLastUpdate" />
+  </wsdl:message>
+  <wsdl:message name="CranService_getLastUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="getLastUpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CranService">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="urn:CranService/DoWork" message="CranService_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="urn:CranService/DoWorkResponse" message="CranService_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCranTasks">
+      <wsdl:input wsaw:Action="urn:CranService/getCranTasks" message="CranService_getCranTasks_InputMessage" />
+      <wsdl:output wsaw:Action="urn:CranService/getCranTasksResponse" message="CranService_getCranTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCranTask">
+      <wsdl:input wsaw:Action="urn:CranService/CreateCranTask" message="CranService_CreateCranTask_InputMessage" />
+      <wsdl:output wsaw:Action="urn:CranService/CreateCranTaskResponse" message="CranService_CreateCranTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CommentCranTask">
+      <wsdl:input wsaw:Action="urn:CranService/CommentCranTask" message="CranService_CommentCranTask_InputMessage" />
+      <wsdl:output wsaw:Action="urn:CranService/CommentCranTaskResponse" message="CranService_CommentCranTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelCranTask">
+      <wsdl:input wsaw:Action="urn:CranService/CancelCranTask" message="CranService_CancelCranTask_InputMessage" />
+      <wsdl:output wsaw:Action="urn:CranService/CancelCranTaskResponse" message="CranService_CancelCranTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishCranTask">
+      <wsdl:input wsaw:Action="urn:CranService/FinishCranTask" message="CranService_FinishCranTask_InputMessage" />
+      <wsdl:output wsaw:Action="urn:CranService/FinishCranTaskResponse" message="CranService_FinishCranTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLastUpdate">
+      <wsdl:input wsaw:Action="urn:CranService/getLastUpdate" message="CranService_getLastUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:CranService/getLastUpdateResponse" message="CranService_getLastUpdate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

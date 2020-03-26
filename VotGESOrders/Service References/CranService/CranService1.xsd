@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VotGESOrders.Web.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VotGESOrders.Web.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8090/CranService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CranFilter">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CranUsers" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfCranTaskInfo" />
+      <xs:element minOccurs="0" name="DateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateStart" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Managers" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StropUsers" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CranFilter" nillable="true" type="tns:CranFilter" />
+  <xs:complexType name="ArrayOfCranTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CranTaskInfo" nillable="true" type="tns:CranTaskInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCranTaskInfo" nillable="true" type="tns:ArrayOfCranTaskInfo" />
+  <xs:complexType name="CranTaskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgreeComments" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AgreeDict" nillable="true" type="q4:ArrayOfKeyValueOfintstring" />
+      <xs:element minOccurs="0" name="AllowDateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AllowDateStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Allowed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorAllow" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorCancel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorFinish" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorOpen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuthorText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cancelled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CranName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CranNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="CranUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CranUserShort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Denied" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FinishCurrentTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Finished" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasAgreeComment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasReviewComment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Manager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManagerShort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NeedEndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NeedStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+      <xs:element minOccurs="0" name="OpenCurrentTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Opened" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RealDateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RealDateStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReviewComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reviewed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SelAuthor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateDB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StropUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StropUserShort" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaskAction" type="tns:CranTaskAction" />
+      <xs:element minOccurs="0" name="TaskState" type="tns:CranTaskState" />
+      <xs:element minOccurs="0" name="YearNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="canCancel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="canChange" type="xs:boolean" />
+      <xs:element minOccurs="0" name="canCheck" type="xs:boolean" />
+      <xs:element minOccurs="0" name="canComment" type="xs:boolean" />
+      <xs:element minOccurs="0" name="canFinish" type="xs:boolean" />
+      <xs:element minOccurs="0" name="canOpen" type="xs:boolean" />
+      <xs:element minOccurs="0" name="canReturn" type="xs:boolean" />
+      <xs:element minOccurs="0" name="change" type="xs:boolean" />
+      <xs:element minOccurs="0" name="changed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="check" type="xs:boolean" />
+      <xs:element minOccurs="0" name="crossTasks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hasCrossTasks" type="xs:boolean" />
+      <xs:element minOccurs="0" name="init" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CranTaskInfo" nillable="true" type="tns:CranTaskInfo" />
+  <xs:simpleType name="CranTaskAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none" />
+      <xs:enumeration value="create" />
+      <xs:enumeration value="change" />
+      <xs:enumeration value="review" />
+      <xs:enumeration value="open" />
+      <xs:enumeration value="finish" />
+      <xs:enumeration value="cancel" />
+      <xs:enumeration value="returnCancel" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CranTaskAction" nillable="true" type="tns:CranTaskAction" />
+  <xs:simpleType name="CranTaskState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="created" />
+      <xs:enumeration value="reviewed" />
+      <xs:enumeration value="canceled" />
+      <xs:enumeration value="opened" />
+      <xs:enumeration value="finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CranTaskState" nillable="true" type="tns:CranTaskState" />
+  <xs:complexType name="ReturnMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Result" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnMessage" nillable="true" type="tns:ReturnMessage" />
+</xs:schema>

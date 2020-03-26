@@ -1,0 +1,271 @@
+﻿<UserControl x:Class="VotGESOrders.Views.OrderControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="1100">
+
+	<Grid x:Name="LayoutRoot" Margin="2">
+		<StackPanel>
+
+			<StackPanel HorizontalAlignment="Stretch" Name="orderForm" 
+								VerticalAlignment="Stretch">
+
+				<Grid >
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition  Width="420"/>
+						<ColumnDefinition  Width="*" MinWidth="600"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<Border Style="{StaticResource borderFilterControl}" Grid.ColumnSpan="2" Grid.Row="0">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="1*"/>
+							</Grid.ColumnDefinitions>
+							<StackPanel Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
+								<TextBlock Text="Заявка " Style="{StaticResource Label}"/>
+								<TextBlock Text="{Binding OrderTypeShortName}" Style="{StaticResource Value}"/>
+								<TextBlock Text=" № " Style="{StaticResource Label}"/>
+								<TextBlock Text="{Binding OrderYearNumber, Converter={StaticResource orderNumberConverter}}" 
+											 Style="{StaticResource Value}"/>
+								<TextBlock Text=" от " Style="{StaticResource Label}" />
+								<TextBlock Text="{Binding OrderDateCreate, Converter={StaticResource dateTimeConverter}, ConverterParameter='dd.MM.yyyy'}"
+											 Style="{StaticResource Value}"/>
+                                <TextBlock Text=" [ID=" Style="{StaticResource Label}" />
+                                <TextBlock Text="{Binding OrderNumber, Converter={StaticResource orderNumberConverter}, ConverterParameter='dd.MM.yyyy'}"
+											 Style="{StaticResource Label}"/>
+                                <TextBlock Text="]" Style="{StaticResource Label}" />
+                            </StackPanel>
+
+							<StackPanel  Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+
+								<StackPanel  Orientation="Horizontal" Margin="10,00,0,0">
+									<TextBlock Text="Аварийная готовность: " Style="{StaticResource Label}" />
+									<TextBlock Text="{Binding ReadyTime}" Style="{StaticResource Value}"/>
+								</StackPanel>
+							</StackPanel>
+
+							<StackPanel  Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Right">						
+
+								<StackPanel  Orientation="Horizontal" Margin="10,00,0,0">
+									<TextBlock Text="Состояние: " Style="{StaticResource Label}" />
+									<TextBlock Text="{Binding OrderStateStr}"
+											 Style="{StaticResource Value}"/>
+								</StackPanel>
+							</StackPanel>
+						</Grid>
+					</Border>
+
+					<Border Style="{StaticResource borderFilterControl}" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition/>
+								<ColumnDefinition/>
+								<ColumnDefinition/>
+							</Grid.ColumnDefinitions>
+
+							<StackPanel Orientation="Vertical" Grid.Column="0">
+								<TextBlock Text="Оборудование:  " Style="{StaticResource Label}" HorizontalAlignment="Center"/>
+								<TextBlock Text="{Binding FullOrderObjectInfo}" Style="{StaticResource ValueText}"/>
+							</StackPanel>
+
+							<StackPanel Orientation="Vertical" Grid.Column="1">
+								<TextBlock Text="Текст заявки:  " Style="{StaticResource Label}"  HorizontalAlignment="Center"/>
+								<TextBlock Text="{Binding OrderText}" Style="{StaticResource ValueText}" />
+							</StackPanel>
+							<StackPanel Orientation="Vertical" Grid.Column="2">
+								<TextBlock Text="Согласовано:  " Style="{StaticResource Label}" HorizontalAlignment="Center"/>
+								<TextBlock Text="{Binding AgreeText}" Style="{StaticResource ValueText}"/>
+							</StackPanel>
+						</Grid>
+					</Border>
+
+					<Border Style="{StaticResource borderFilterControl}" Grid.Column="0" Grid.Row="2">
+						<StackPanel >
+							<StackPanel Orientation="Horizontal" Visibility="{Binding OrderHasParentOrder, Converter={StaticResource visibilityConverter}}">
+								<TextBlock Style="{StaticResource Label}" Text="СТАРАЯ ЗАЯВКА №"/>
+								<TextBlock Style="{StaticResource Value}" Text="{Binding ParentOrderYearNumber, Converter={StaticResource orderNumberConverter}}"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal" Visibility="{Binding OrderHasChildOrder, Converter={StaticResource visibilityConverter}}">
+								<TextBlock Style="{StaticResource Label}" Text="НОВАЯ ЗАЯВКА №"/>
+								<TextBlock Style="{StaticResource Value}" Text="{Binding ChildOrderYearNumber, Converter={StaticResource orderNumberConverter}}"/>
+							</StackPanel>
+
+							<Grid  Margin="0,15,0,0" >
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="120"/>
+									<ColumnDefinition Width="150"/>
+									<ColumnDefinition Width="150"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition></RowDefinition>
+									<RowDefinition></RowDefinition>
+									<RowDefinition></RowDefinition>
+									<RowDefinition></RowDefinition>
+								</Grid.RowDefinitions>
+								<TextBlock Text="План" Style="{StaticResource Label}" Grid.Row="1" HorizontalAlignment="Right"/>
+								<TextBlock Text="Факт" Style="{StaticResource Label}" Grid.Row="2" HorizontalAlignment="Right"/>
+								<TextBlock Text="Разрешение на ввод" Style="{StaticResource Label}" Grid.Row="3" HorizontalAlignment="Right"/>
+								<TextBlock Text="Начало" Style="{StaticResource Label}" Grid.Column="1" HorizontalAlignment="Center"/>
+								<TextBlock Text="Окончание" Style="{StaticResource Label}" Grid.Column="2" HorizontalAlignment="Center"/>
+
+								<TextBlock Text="{Binding PlanStartDate, Converter={StaticResource dateTimeConverter}}"
+                               Style="{StaticResource Value}" Grid.Row="1" Grid.Column="1"/>
+								<TextBlock Text="{Binding PlanStopDate, Converter={StaticResource dateTimeConverter}}"
+                               Style="{StaticResource Value}"  Grid.Row="1" Grid.Column="2"/>
+								<TextBlock Text="{Binding FaktStartDate, Converter={StaticResource dateTimeConverter}}"
+                               Style="{StaticResource Value}" Grid.Row="2" Grid.Column="1"/>
+								<TextBlock Text="{Binding FaktCompleteDate, Converter={StaticResource dateTimeConverter}}"
+                               Style="{StaticResource Value}" Grid.Row="2" Grid.Column="2"/>
+								<TextBlock Text="{Binding FaktStopDate, Converter={StaticResource dateTimeConverter}}"
+                           Style="{StaticResource Value}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
+							</Grid>
+						</StackPanel>
+					</Border>
+
+					<Border Style="{StaticResource borderFilterControl}" Grid.Column="2" Grid.Row="2">
+						<StackPanel>
+
+							<Grid  Margin="0,15,0,0">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="100"/>
+									<ColumnDefinition Width="150"/>
+									<ColumnDefinition Width="150"/>
+									<ColumnDefinition Width="1*"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition />
+									<RowDefinition Height="{Binding OrderCreated, Converter={StaticResource heightConverter}}"/>
+									<RowDefinition Height="{Binding OrderReviewed, Converter={StaticResource heightConverter}}"/>
+									<RowDefinition Height="{Binding OrderOpened, Converter={StaticResource heightConverter}}"/>
+									<RowDefinition Height="{Binding OrderClosed, Converter={StaticResource heightConverter}}"/>
+									<RowDefinition Height="{Binding OrderCompleted, Converter={StaticResource heightConverter}}"/>
+									<RowDefinition Height="{Binding OrderCanceled, Converter={StaticResource heightConverter}}"/>
+									<RowDefinition />
+								</Grid.RowDefinitions>
+
+								<TextBlock Text="Создал:" Style="{StaticResource Label}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"/>
+								<TextBlock Text="Рассмотрел:" Style="{StaticResource Label}" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"/>
+								<TextBlock Text="Открыл:" Style="{StaticResource Label}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"/>
+								<TextBlock Text="Разрешил ввод:" Style="{StaticResource Label}" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right"/>
+								<TextBlock Text="Закрыл:" Style="{StaticResource Label}" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"/>
+								<TextBlock Text="Снял:" Style="{StaticResource Label}" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right"/>
+
+								<TextBlock Text="Автор" Style="{StaticResource Label}" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center"/>
+								<TextBlock Text="Дата" Style="{StaticResource Label}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center"/>
+								<TextBlock Text="Комментарий" Style="{StaticResource Label}" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center"/>
+
+								<TextBlock Text="{Binding UserCreateOrder.FullName}" Style="{StaticResource Value}" 
+							  Grid.Column="1" Grid.Row="1" />
+								<TextBlock Text="{Binding OrderDateCreate, Converter={StaticResource dateTimeConverter}}" 
+							  Grid.Column="2" Grid.Row="1"   Style="{StaticResource Value}"/>
+								<TextBlock Text="{Binding CreateText}" 
+							  Grid.Column="3" Grid.Row="1"  Style="{StaticResource ValueText}" TextWrapping="Wrap"/>
+
+								<TextBlock Text="{Binding UserReviewOrder.FullName}" Style="{StaticResource Value}" 
+							  Grid.Column="1" Grid.Row="2" />
+								<TextBlock Text="{Binding OrderDateReview, Converter={StaticResource dateTimeConverter}}" 
+							  Grid.Column="2" Grid.Row="2"   Style="{StaticResource Value}"/>
+								<TextBlock Text="{Binding ReviewText}" 
+							  Grid.Column="3" Grid.Row="2"  Style="{StaticResource ValueText}" TextWrapping="Wrap"/>
+							
+
+								<TextBlock Text="{Binding UserOpenOrder.FullName}" Style="{StaticResource Value}" 
+							  Grid.Column="1" Grid.Row="3"  />
+								<TextBlock Text="{Binding OrderDateOpen, Converter={StaticResource dateTimeConverter}}" 
+							  Grid.Column="2" Grid.Row="3"   Style="{StaticResource Value}"/>
+								<TextBlock Text="{Binding OpenText}" 
+							  Grid.Column="3" Grid.Row="3"   Style="{StaticResource ValueText}" />
+
+								<TextBlock Text="{Binding UserCloseOrder.FullName}" Style="{StaticResource Value}" 
+							  Grid.Column="1" Grid.Row="4"  />
+								<TextBlock Text="{Binding OrderDateClose, Converter={StaticResource dateTimeConverter}}" 
+							  Grid.Column="2" Grid.Row="4"   Style="{StaticResource Value}"/>
+								<TextBlock Text="{Binding CloseText}" 
+							  Grid.Column="3" Grid.Row="4"  Style="{StaticResource ValueText}" />
+
+								<TextBlock Text="{Binding UserCompleteOrder.FullName}" Style="{StaticResource Value}" 
+							  Grid.Column="1" Grid.Row="5"  />
+								<TextBlock Text="{Binding OrderDateComplete, Converter={StaticResource dateTimeConverter}}" 
+							  Grid.Column="2" Grid.Row="5"   Style="{StaticResource Value}"/>
+								<TextBlock Text="{Binding CompleteText}" 
+							  Grid.Column="3" Grid.Row="5"   Style="{StaticResource ValueText}" />
+
+								<TextBlock Text="{Binding UserCancelOrder.FullName}" Style="{StaticResource Value}" 
+							  Grid.Column="1" Grid.Row="6"  />
+								<TextBlock Text="{Binding OrderDateCancel, Converter={StaticResource dateTimeConverter}}" 
+							  Grid.Column="2" Grid.Row="6"  Style="{StaticResource Value}"/>
+								<TextBlock Text="{Binding CancelText}" 
+							  Grid.Column="3" Grid.Row="6"   Style="{StaticResource ValueText}" />
+
+								<ScrollViewer MaxHeight="70" Grid.Row="7" Grid.ColumnSpan="4" HorizontalAlignment="Stretch">
+									<TextBlock  Text="{Binding CommentsText}" Style="{StaticResource ValueText}" 
+												  TextAlignment="Left" HorizontalAlignment="Stretch" TextDecorations="None" />
+								</ScrollViewer>
+
+							</Grid>
+						</StackPanel>
+					</Border>
+				</Grid>
+			</StackPanel>
+
+			<StackPanel x:Name="pnlOrderButtons" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" >
+				<Button Name="btnChange" Click="btnChange_Click" Content="Изменить"
+					  Visibility="{Binding AllowChangeOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnAccept" Click="btnAccept_Click" Content="Разрешить/запретить"
+					  Visibility="{Binding AllowReviewOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnOpen" Click="btnOpen_Click" Content="Открыть"
+					  Visibility="{Binding AllowOpenOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnClose" Click="btnClose_Click" Content="Разрешить ввод"
+					  Visibility="{Binding AllowCloseOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnCancel" Click="btnCancel_Click"  Content="Снять заявку"
+					  Visibility="{Binding AllowCancelOrder, Converter={StaticResource visibilityConverter}}" 					  
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnComment" Click="btnComment_Click"  Content="Комментировать заявку"
+					  Visibility="{Binding AllowCommentOrder, Converter={StaticResource visibilityConverter}}" 					  
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnComplete" Click="btnComplete_Click" Content="Закрыть заявку"
+					  Visibility="{Binding AllowCompleteOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnCompleteWithoutEnter" Click="btnCompleteWithoutEnter_Click" Content="Закрыть без ввода оборудования"
+					  Visibility="{Binding AllowCompleteWithoutEnterOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnLongate" Click="btnExtend_Click" Content="Продлить"
+					  Visibility="{Binding AllowExtendOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+
+				<StackPanel Orientation="Horizontal" Margin="50,0,0,0">
+				<Button Name="btnRejectReview" Click="btnRejectReview_Click" Content="Отменить рассмотрение"  Foreground="Red" Background="Red"
+					  Visibility="{Binding AllowRejectReviewOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnRejectOpen" Click="btnRejectOpen_Click" Content="Отменить открытие"  Foreground="Red" Background="Red"
+					  Visibility="{Binding AllowRejectOpenOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnRejectCancel" Click="btnRejectCancel_Click" Content="Отменить снятие"  Foreground="Red" Background="Red"
+					  Visibility="{Binding AllowRejectCancelOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnRejectClose" Click="btnRejectClose_Click" Content="Отменить разрешение на ввод"  Foreground="Red" Background="Red"
+					  Visibility="{Binding AllowRejectCloseOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnRejectComplete" Click="btnRejectComplete_Click" Content="Отменить закрытие"  Foreground="Red" Background="Red"
+					  Visibility="{Binding AllowRejectCompleteOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				<Button Name="btnEdit" Click="btnEdit_Click" Content="Редактировать вручную"  Foreground="Red" Background="Red"
+					  Visibility="{Binding AllowEditOrder, Converter={StaticResource visibilityConverter}}"
+					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</UserControl>

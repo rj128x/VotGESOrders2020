@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.Globalization" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Globalization" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8090/OrdersService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="NumberFormatInfo">
+    <xs:sequence>
+      <xs:element name="ansiCurrencySymbol" nillable="true" type="xs:string" />
+      <xs:element name="currencyDecimalDigits" type="xs:int" />
+      <xs:element name="currencyDecimalSeparator" nillable="true" type="xs:string" />
+      <xs:element name="currencyGroupSeparator" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="currencyGroupSizes" nillable="true" type="q1:ArrayOfint" />
+      <xs:element name="currencyNegativePattern" type="xs:int" />
+      <xs:element name="currencyPositivePattern" type="xs:int" />
+      <xs:element name="currencySymbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="digitSubstitution" type="xs:int" />
+      <xs:element name="isReadOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="m_dataItem" type="xs:int" />
+      <xs:element minOccurs="0" name="m_isInvariant" type="xs:boolean" />
+      <xs:element minOccurs="0" name="m_useUserOverride" type="xs:boolean" />
+      <xs:element name="nanSymbol" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="nativeDigits" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element name="negativeInfinitySymbol" nillable="true" type="xs:string" />
+      <xs:element name="negativeSign" nillable="true" type="xs:string" />
+      <xs:element name="numberDecimalDigits" type="xs:int" />
+      <xs:element name="numberDecimalSeparator" nillable="true" type="xs:string" />
+      <xs:element name="numberGroupSeparator" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="numberGroupSizes" nillable="true" type="q3:ArrayOfint" />
+      <xs:element name="numberNegativePattern" type="xs:int" />
+      <xs:element name="perMilleSymbol" nillable="true" type="xs:string" />
+      <xs:element name="percentDecimalDigits" type="xs:int" />
+      <xs:element name="percentDecimalSeparator" nillable="true" type="xs:string" />
+      <xs:element name="percentGroupSeparator" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="percentGroupSizes" nillable="true" type="q4:ArrayOfint" />
+      <xs:element name="percentNegativePattern" type="xs:int" />
+      <xs:element name="percentPositivePattern" type="xs:int" />
+      <xs:element name="percentSymbol" nillable="true" type="xs:string" />
+      <xs:element name="positiveInfinitySymbol" nillable="true" type="xs:string" />
+      <xs:element name="positiveSign" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="validForParseAsCurrency" type="xs:boolean" />
+      <xs:element minOccurs="0" name="validForParseAsNumber" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NumberFormatInfo" nillable="true" type="tns:NumberFormatInfo" />
+</xs:schema>

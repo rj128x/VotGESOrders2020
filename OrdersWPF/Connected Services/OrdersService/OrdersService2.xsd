@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VotGESOrders.Web.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VotGESOrders.Web.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8090/OrdersService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8090/OrdersService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Globalization" />
+  <xs:complexType name="OrderFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateEnd" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DateFilterTypes" nillable="true" type="q1:ArrayOfKeyValueOfFilterDateTypestringKRjg_S7UO" />
+      <xs:element minOccurs="0" name="DateStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FilterDate" type="tns:FilterDateType" />
+      <xs:element minOccurs="0" name="FilterType" type="tns:OrderFilterEnum" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FilterTypes" nillable="true" type="q2:ArrayOfKeyValueOfOrderFilterEnumstringKRjg_S7UO" />
+      <xs:element minOccurs="0" name="FilterUser" type="tns:FilterUserType" />
+      <xs:element minOccurs="0" name="OrderObject" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrderStates" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="OrderText" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrderTypes" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SelectedObjects" nillable="true" type="tns:ArrayOfOrderObject" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SelectedObjectsArray" nillable="true" type="q5:ArrayOfint" />
+      <xs:element minOccurs="0" name="SelectedObjectsStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectedUsers" nillable="true" type="tns:ArrayOfOrdersUser" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SelectedUsersArray" nillable="true" type="q6:ArrayOfint" />
+      <xs:element minOccurs="0" name="SelectedUsersStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowAllNumbers" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAllObjectIDs" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAllObjects" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAllOrderTexts" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAllStates" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAllTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAllTypes" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowAllUsers" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowChildObjects" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowExpiredOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersAV" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersAccepted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersAskExtended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersBanned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersCanceled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersClosed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersCompleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersCompletedWithoutEnter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersCreated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersExtended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersIsExtend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersNO" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersNPL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersOpened" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowOrdersPL" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowRelatedOrders" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StartNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="StopNumber" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserFilterTypes" nillable="true" type="q7:ArrayOfKeyValueOfFilterUserTypestringKRjg_S7UO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderFilter" nillable="true" type="tns:OrderFilter" />
+  <xs:simpleType name="FilterDateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="create" />
+      <xs:enumeration value="review" />
+      <xs:enumeration value="cancel" />
+      <xs:enumeration value="planStart" />
+      <xs:enumeration value="planStop" />
+      <xs:enumeration value="faktStart" />
+      <xs:enumeration value="faktStop" />
+      <xs:enumeration value="faktEnter" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FilterDateType" nillable="true" type="tns:FilterDateType" />
+  <xs:simpleType name="OrderFilterEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="defaultFilter" />
+      <xs:enumeration value="active" />
+      <xs:enumeration value="userFilter" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderFilterEnum" nillable="true" type="tns:OrderFilterEnum" />
+  <xs:simpleType name="FilterUserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="create" />
+      <xs:enumeration value="review" />
+      <xs:enumeration value="cancel" />
+      <xs:enumeration value="open" />
+      <xs:enumeration value="close" />
+      <xs:enumeration value="complete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FilterUserType" nillable="true" type="tns:FilterUserType" />
+  <xs:complexType name="ArrayOfOrderObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderObject" nillable="true" type="tns:OrderObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderObject" nillable="true" type="tns:ArrayOfOrderObject" />
+  <xs:complexType name="OrderObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildObjects" nillable="true" type="tns:ArrayOfOrderObject" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="ObjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentObject" nillable="true" type="tns:OrderObject" />
+      <xs:element minOccurs="0" name="ParentObjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="ShowInFullName" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderObject" nillable="true" type="tns:OrderObject" />
+  <xs:complexType name="ArrayOfOrdersUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrdersUser" nillable="true" type="tns:OrdersUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrdersUser" nillable="true" type="tns:ArrayOfOrdersUser" />
+  <xs:complexType name="OrdersUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddFinishLogins" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddLogins" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AllowAgreeOrders" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowChangeOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowCreateCrashOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowCreateOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowEditOrders" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowEditTree" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowEditUsers" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowReviewOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanCreateCranTask" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanFinishCranTask" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanReviewCranTask" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Mails" nillable="true" type="q8:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SendAgreeMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendAllAgreeMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendAllCranTask" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendAllCreateCranTask" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendAllCreateMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendAllMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SendCreateMail" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrdersUser" nillable="true" type="tns:OrdersUser" />
+  <xs:complexType name="OrderInfo">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System.Globalization" minOccurs="0" name="NFI" nillable="true" type="q9:NumberFormatInfo" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrderStates" nillable="true" type="q10:ArrayOfKeyValueOfOrderStateEnumstringKRjg_S7UO" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrderTypes" nillable="true" type="q11:ArrayOfKeyValueOfOrderTypeEnumstringKRjg_S7UO" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrderTypesShort" nillable="true" type="q12:ArrayOfKeyValueOfOrderTypeEnumstringKRjg_S7UO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderInfo" nillable="true" type="tns:OrderInfo" />
+  <xs:simpleType name="OrderStateEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="created" />
+      <xs:enumeration value="accepted" />
+      <xs:enumeration value="opened" />
+      <xs:enumeration value="closed" />
+      <xs:enumeration value="banned" />
+      <xs:enumeration value="canceled" />
+      <xs:enumeration value="completed" />
+      <xs:enumeration value="completedWithoutEnter" />
+      <xs:enumeration value="extended" />
+      <xs:enumeration value="askExtended" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderStateEnum" nillable="true" type="tns:OrderStateEnum" />
+  <xs:simpleType name="OrderTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pl" />
+      <xs:enumeration value="npl" />
+      <xs:enumeration value="no" />
+      <xs:enumeration value="crash" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderTypeEnum" nillable="true" type="tns:OrderTypeEnum" />
+  <xs:complexType name="ArrayOfOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgreeText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgreeUsers" nillable="true" type="tns:ArrayOfOrdersUser" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AgreeUsersDict" nillable="true" type="q13:ArrayOfKeyValueOfintstring" />
+      <xs:element minOccurs="0" name="AgreeUsersIDSText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CancelText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildOrder" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="ChildOrderNumber" type="xs:double" />
+      <xs:element minOccurs="0" name="ChildOrderYearNumber" type="xs:double" />
+      <xs:element minOccurs="0" name="CloseText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommentsText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommentsTextBrief" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompleteText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiredCloseHours" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ExpiredCompleteHours" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ExpiredOpenHours" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ExpiredReglamentHours" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="FaktCompleteDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FaktStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FaktStopDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FullOrderObjectInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasComments" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCurrentUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsCurrentYear" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NewComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpenText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderAskExtended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderBanned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderCanceled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderCanceledWithoutReview" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderClosed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderCompleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderCompletedWithoutEnter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderCreated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderDateCancel" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderDateClose" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderDateComplete" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderDateCreate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderDateOpen" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderDateReview" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderExtended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderHasChildOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderHasParentOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderIsExpiredClose" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderIsExpiredOpen" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderIsExpiredReglament" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderIsExpriredComplete" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderIsExtend" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderIsFixErrorEnter" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:double" />
+      <xs:element minOccurs="0" name="OrderNumberExp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderNumberFloor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderObjectAddInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderOpened" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderOperation" type="tns:OrderOperationEnum" />
+      <xs:element minOccurs="0" name="OrderReviewed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OrderState" type="tns:OrderStateEnum" />
+      <xs:element minOccurs="0" name="OrderStateStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderType" type="tns:OrderTypeEnum" />
+      <xs:element minOccurs="0" name="OrderTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderTypeShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderYear" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderYearNumber" type="xs:double" />
+      <xs:element minOccurs="0" name="ParentOrder" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="ParentOrderNumber" type="xs:double" />
+      <xs:element minOccurs="0" name="ParentOrderYearNumber" type="xs:double" />
+      <xs:element minOccurs="0" name="PlanStartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanStopDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReadyTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelOrderObject" nillable="true" type="tns:OrderObject" />
+      <xs:element minOccurs="0" name="SelOrderObjectID" type="xs:int" />
+      <xs:element minOccurs="0" name="SelOrderObjectText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeToClose" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TimeToEnter" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="TimeToOpen" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="UserCancelOrder" nillable="true" type="tns:OrdersUser" />
+      <xs:element minOccurs="0" name="UserCancelOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserCloseOrder" nillable="true" type="tns:OrdersUser" />
+      <xs:element minOccurs="0" name="UserCloseOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserCompleteOrder" nillable="true" type="tns:OrdersUser" />
+      <xs:element minOccurs="0" name="UserCompleteOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserCreateOrder" nillable="true" type="tns:OrdersUser" />
+      <xs:element minOccurs="0" name="UserCreateOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserOpenOrder" nillable="true" type="tns:OrdersUser" />
+      <xs:element minOccurs="0" name="UserOpenOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserReviewOrder" nillable="true" type="tns:OrdersUser" />
+      <xs:element minOccurs="0" name="UserReviewOrderID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
+  <xs:simpleType name="OrderOperationEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="none" />
+      <xs:enumeration value="create" />
+      <xs:enumeration value="review" />
+      <xs:enumeration value="open" />
+      <xs:enumeration value="close" />
+      <xs:enumeration value="complete" />
+      <xs:enumeration value="edit" />
+      <xs:enumeration value="comment" />
+      <xs:enumeration value="cancel" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderOperationEnum" nillable="true" type="tns:OrderOperationEnum" />
+</xs:schema>

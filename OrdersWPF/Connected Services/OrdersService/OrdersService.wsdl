@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:8090/OrdersService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:8090/OrdersService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8090/OrdersService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VotGESOrders.Web.Models" />
+      <xsd:import schemaLocation="http://localhost:8090/OrdersService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8090/OrdersService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Globalization" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="OrdersService_InitFilter_InputMessage">
+    <wsdl:part name="parameters" element="InitFilter" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_InitFilter_OutputMessage">
+    <wsdl:part name="parameters" element="InitFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_InitOrderInfo_InputMessage">
+    <wsdl:part name="parameters" element="InitOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_InitOrderInfo_OutputMessage">
+    <wsdl:part name="parameters" element="InitOrderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_LoadOrders_InputMessage">
+    <wsdl:part name="parameters" element="LoadOrders" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_LoadOrders_OutputMessage">
+    <wsdl:part name="parameters" element="LoadOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_GetFilteredOrdersFromFilter_InputMessage">
+    <wsdl:part name="parameters" element="GetFilteredOrdersFromFilter" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_GetFilteredOrdersFromFilter_OutputMessage">
+    <wsdl:part name="parameters" element="GetFilteredOrdersFromFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_GetFilteredOrdersFromFilterToMail_InputMessage">
+    <wsdl:part name="parameters" element="GetFilteredOrdersFromFilterToMail" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_GetFilteredOrdersFromFilterToMail_OutputMessage">
+    <wsdl:part name="parameters" element="GetFilteredOrdersFromFilterToMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_LoadOrdersUsers_InputMessage">
+    <wsdl:part name="parameters" element="LoadOrdersUsers" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_LoadOrdersUsers_OutputMessage">
+    <wsdl:part name="parameters" element="LoadOrdersUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_LoadOrderObjects_InputMessage">
+    <wsdl:part name="parameters" element="LoadOrderObjects" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_LoadOrderObjects_OutputMessage">
+    <wsdl:part name="parameters" element="LoadOrderObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterNew_InputMessage">
+    <wsdl:part name="parameters" element="RegisterNew" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterNew_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterChangeOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterChangeOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterChangeOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterChangeOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterAcceptOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterAcceptOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterAcceptOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterAcceptOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterBanOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterBanOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterBanOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterBanOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterCancelOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterCancelOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterCancelOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterCancelOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterOpenOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterOpenOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterOpenOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterOpenOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterCloseOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterCloseOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterCloseOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterCloseOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterCompleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterCompleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterCompleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterCompleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectReviewOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectReviewOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectReviewOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectReviewOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectCancelOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectCancelOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectCancelOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectCancelOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectOpenOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectOpenOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectOpenOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectOpenOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectCloseOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectCloseOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectCloseOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectCloseOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectCompleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectCompleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterRejectCompleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterRejectCompleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterEditOrder_InputMessage">
+    <wsdl:part name="parameters" element="RegisterEditOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterEditOrder_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterEditOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterAddComment_InputMessage">
+    <wsdl:part name="parameters" element="RegisterAddComment" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterAddComment_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterAddCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_ReloadOrder_InputMessage">
+    <wsdl:part name="parameters" element="ReloadOrder" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_ReloadOrder_OutputMessage">
+    <wsdl:part name="parameters" element="ReloadOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_ExistsChanges_InputMessage">
+    <wsdl:part name="parameters" element="ExistsChanges" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_ExistsChanges_OutputMessage">
+    <wsdl:part name="parameters" element="ExistsChangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_UpdateOrderObject_InputMessage">
+    <wsdl:part name="parameters" element="UpdateOrderObject" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_UpdateOrderObject_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateOrderObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterChangeObject_InputMessage">
+    <wsdl:part name="parameters" element="RegisterChangeObject" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterChangeObject_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterChangeObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterDeleteObject_InputMessage">
+    <wsdl:part name="parameters" element="RegisterDeleteObject" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterDeleteObject_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterDeleteObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterChangeUser_InputMessage">
+    <wsdl:part name="parameters" element="RegisterChangeUser" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterChangeUser_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterChangeUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterDeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="RegisterDeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="OrdersService_RegisterDeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="RegisterDeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OrdersService">
+    <wsdl:operation name="InitFilter">
+      <wsdl:input wsaw:Action="urn:OrdersService/InitFilter" message="OrdersService_InitFilter_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/InitFilterResponse" message="OrdersService_InitFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitOrderInfo">
+      <wsdl:input wsaw:Action="urn:OrdersService/InitOrderInfo" message="OrdersService_InitOrderInfo_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/InitOrderInfoResponse" message="OrdersService_InitOrderInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrders">
+      <wsdl:input wsaw:Action="urn:OrdersService/LoadOrders" message="OrdersService_LoadOrders_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/LoadOrdersResponse" message="OrdersService_LoadOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredOrdersFromFilter">
+      <wsdl:input wsaw:Action="urn:OrdersService/GetFilteredOrdersFromFilter" message="OrdersService_GetFilteredOrdersFromFilter_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/GetFilteredOrdersFromFilterResponse" message="OrdersService_GetFilteredOrdersFromFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredOrdersFromFilterToMail">
+      <wsdl:input wsaw:Action="urn:OrdersService/GetFilteredOrdersFromFilterToMail" message="OrdersService_GetFilteredOrdersFromFilterToMail_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/GetFilteredOrdersFromFilterToMailResponse" message="OrdersService_GetFilteredOrdersFromFilterToMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrdersUsers">
+      <wsdl:input wsaw:Action="urn:OrdersService/LoadOrdersUsers" message="OrdersService_LoadOrdersUsers_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/LoadOrdersUsersResponse" message="OrdersService_LoadOrdersUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadOrderObjects">
+      <wsdl:input wsaw:Action="urn:OrdersService/LoadOrderObjects" message="OrdersService_LoadOrderObjects_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/LoadOrderObjectsResponse" message="OrdersService_LoadOrderObjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNew">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterNew" message="OrdersService_RegisterNew_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterNewResponse" message="OrdersService_RegisterNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterChangeOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterChangeOrder" message="OrdersService_RegisterChangeOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterChangeOrderResponse" message="OrdersService_RegisterChangeOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterAcceptOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterAcceptOrder" message="OrdersService_RegisterAcceptOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterAcceptOrderResponse" message="OrdersService_RegisterAcceptOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBanOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterBanOrder" message="OrdersService_RegisterBanOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterBanOrderResponse" message="OrdersService_RegisterBanOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCancelOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterCancelOrder" message="OrdersService_RegisterCancelOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterCancelOrderResponse" message="OrdersService_RegisterCancelOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterOpenOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterOpenOrder" message="OrdersService_RegisterOpenOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterOpenOrderResponse" message="OrdersService_RegisterOpenOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCloseOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterCloseOrder" message="OrdersService_RegisterCloseOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterCloseOrderResponse" message="OrdersService_RegisterCloseOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCompleteOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterCompleteOrder" message="OrdersService_RegisterCompleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterCompleteOrderResponse" message="OrdersService_RegisterCompleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterRejectReviewOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterRejectReviewOrder" message="OrdersService_RegisterRejectReviewOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterRejectReviewOrderResponse" message="OrdersService_RegisterRejectReviewOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterRejectCancelOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterRejectCancelOrder" message="OrdersService_RegisterRejectCancelOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterRejectCancelOrderResponse" message="OrdersService_RegisterRejectCancelOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterRejectOpenOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterRejectOpenOrder" message="OrdersService_RegisterRejectOpenOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterRejectOpenOrderResponse" message="OrdersService_RegisterRejectOpenOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterRejectCloseOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterRejectCloseOrder" message="OrdersService_RegisterRejectCloseOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterRejectCloseOrderResponse" message="OrdersService_RegisterRejectCloseOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterRejectCompleteOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterRejectCompleteOrder" message="OrdersService_RegisterRejectCompleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterRejectCompleteOrderResponse" message="OrdersService_RegisterRejectCompleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterEditOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterEditOrder" message="OrdersService_RegisterEditOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterEditOrderResponse" message="OrdersService_RegisterEditOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterAddComment">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterAddComment" message="OrdersService_RegisterAddComment_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterAddCommentResponse" message="OrdersService_RegisterAddComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReloadOrder">
+      <wsdl:input wsaw:Action="urn:OrdersService/ReloadOrder" message="OrdersService_ReloadOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/ReloadOrderResponse" message="OrdersService_ReloadOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistsChanges">
+      <wsdl:input wsaw:Action="urn:OrdersService/ExistsChanges" message="OrdersService_ExistsChanges_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/ExistsChangesResponse" message="OrdersService_ExistsChanges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderObject">
+      <wsdl:input wsaw:Action="urn:OrdersService/UpdateOrderObject" message="OrdersService_UpdateOrderObject_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/UpdateOrderObjectResponse" message="OrdersService_UpdateOrderObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterChangeObject">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterChangeObject" message="OrdersService_RegisterChangeObject_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterChangeObjectResponse" message="OrdersService_RegisterChangeObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDeleteObject">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterDeleteObject" message="OrdersService_RegisterDeleteObject_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterDeleteObjectResponse" message="OrdersService_RegisterDeleteObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterChangeUser">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterChangeUser" message="OrdersService_RegisterChangeUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterChangeUserResponse" message="OrdersService_RegisterChangeUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDeleteUser">
+      <wsdl:input wsaw:Action="urn:OrdersService/RegisterDeleteUser" message="OrdersService_RegisterDeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:OrdersService/RegisterDeleteUserResponse" message="OrdersService_RegisterDeleteUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

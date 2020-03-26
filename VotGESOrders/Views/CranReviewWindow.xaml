@@ -1,0 +1,116 @@
+﻿<controls:ChildWindow x:Class="VotGESOrders.Views.CranReviewWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="500" Height="450" 
+                      xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           Title="Рассмотрение заявки">
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Name="pnlTask" >
+            <Border Style="{StaticResource borderFilterControl}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Номер: " Width="100" Style="{StaticResource Label}"/>
+                        <TextBlock Text="{Binding Number}" Style="{StaticResource Value}" Width="50"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Кран: " Width="100" Style="{StaticResource Label}"/>
+                        <TextBlock Text="{Binding CranName}" Style="{StaticResource ValueText}" Width="400" TextAlignment="Left" TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Автор " Width="100" Style="{StaticResource Label}"/>
+                        <TextBlock Text="{Binding Author}" Style="{StaticResource Value}" Width="400"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Ответственный:" Width="100" Style="{StaticResource Label}"/>
+                        <TextBlock Text="{Binding Manager}" Style="{StaticResource Value}" Width="400"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Стропальщик:" Width="100" Style="{StaticResource Label}"/>
+                        <TextBlock Text="{Binding StropUser}" Style="{StaticResource Value}" Width="400"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Заявка:" Width="100" Style="{StaticResource Label}" VerticalAlignment="Top"/>
+                        <TextBlock  Text="{Binding Comment}" TextWrapping="Wrap" Width="400" Height="40" Style="{StaticResource Value}" FontSize="11" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Visibility="{Binding HasAgreeComment,Converter={StaticResource visibilityConverter}}">
+                        <TextBlock Text="Комментарии:" Width="100" Style="{StaticResource Label}" VerticalAlignment="Top"/>
+                        <TextBox  Text="{Binding AgreeComments}" TextWrapping="Wrap" Height="50" Width="400" IsReadOnly="True" FontSize="11"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                        <TextBlock Text="Запрашиваемое время:" Style="{StaticResource Label}" Width="100" TextWrapping="Wrap"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="300">
+                            <TextBlock Text="{Binding NeedStartDate, StringFormat='dd.MM.yyyy HH:mm'}" Style="{StaticResource Value}" HorizontalAlignment="Left"/>
+                            <TextBlock Text=" - " Style="{StaticResource Label}"/>
+                            <TextBlock Text="{Binding NeedStartDate, StringFormat='dd.MM.yyyy HH:mm'}" Style="{StaticResource Value}" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Border Style="{StaticResource borderFilterControl}">
+            <StackPanel Orientation="Vertical" >                
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="Комментарий:" Width="100" Style="{StaticResource Label}" VerticalAlignment="Top"/>
+                    <TextBox  Text="{Binding ReviewComment, Mode=TwoWay}" TextWrapping="Wrap" Height="40" Width="400" FontSize="11"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Visibility="{Binding Allowed, Converter={StaticResource visibilityConverter}}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Крановщик " Width="100" Style="{StaticResource Label}"/>
+                        <sdk:AutoCompleteBox  Text="{Binding CranUser, Mode=TwoWay}" Width="320" Name="acbCranUser" FilterMode="Contains"/>
+                            <Button Width="23" Content="..." Name="btnCranUser" Click="btnCranUser_Click"/>
+                            <!--<TextBox Text="{Binding Manager, Mode=TwoWay}"  Width="200"/>-->
+                        <!--<ComboBox Name="acbCranUser"  Width="380"  SelectedValue="{Binding CranUser, Mode=TwoWay}"/>-->
+                    </StackPanel>
+                    <TextBlock Text="Разрешенное время" HorizontalAlignment="Right" Style="{StaticResource Label}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Начало" Width="100" Style="{StaticResource Label}"/>
+                        <sdk:DatePicker SelectedDate="{Binding AllowDateStart, Mode=TwoWay}" Width="120" HorizontalAlignment="Left"
+                                                        IsEnabled="{Binding canCheck}" />
+                        <toolkit:TimeUpDown Value="{Binding AllowDateStart, Mode=TwoWay}" HorizontalAlignment="Right"
+                                                            IsEnabled="{Binding canCheck}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="Конец" Width="100" Style="{StaticResource Label}"/>
+                        <sdk:DatePicker SelectedDate="{Binding AllowDateEnd, Mode=TwoWay}" Width="120" HorizontalAlignment="Left"
+                                                        IsEnabled="{Binding canCheck}"/>
+                        <toolkit:TimeUpDown Value="{Binding AllowDateEnd, Mode=TwoWay}" HorizontalAlignment="Right"
+                                                            IsEnabled="{Binding canCheck}"/>
+                    </StackPanel>
+                    
+                </StackPanel>                
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Visibility="{Binding canCheck, Converter={StaticResource visibilityConverter}}">
+                        <Button Name="btnAllow" Content="Разрешить" Margin="0,0,0,0" 
+                                    Click="btnAllow_Click" Foreground="Green"
+                                        IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+                        <Button Name="btnDenie" Content="Отклонить" Margin="20,0,0,0"
+                                    Click="btnDenie_Click" Foreground="Red"
+                                        IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
+                        <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                            <TextBlock Text="Заявка отклонена" HorizontalAlignment="Right" Visibility="{Binding Denied, Converter={StaticResource visibilityConverter}}" 
+                                               Foreground="Red" Style="{StaticResource ValueText}" FontSize="15"/>
+                            <TextBlock Text="Заявка разрешена" HorizontalAlignment="Right" Visibility="{Binding Allowed, Converter={StaticResource visibilityConverter}}" 
+                                               Foreground="Green" Style="{StaticResource ValueText}" FontSize="15"/>
+                        </StackPanel>
+                    </StackPanel>
+               
+            </StackPanel>
+            </Border>
+        </StackPanel>
+        <Button x:Name="CancelButton" Content="Отмена" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+        <Button x:Name="OKButton" Content="ОК" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+        <Grid Name="grdLoading" Visibility="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource visibilityConverter}}"
+              OpacityMask="Aqua" Background="LightBlue" Opacity="0.7" Grid.RowSpan="2" >
+
+            <TextBlock Text="Загрузка данных. подождите" 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontStyle="Italic" FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</controls:ChildWindow>

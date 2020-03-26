@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="VotGESOrders.Views.OrdersGridControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	 xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    mc:Ignorable="d" d:DesignWidth="1000">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <DataGrid x:Name="ordersGrid" AutoGenerateColumns="False" 
+                             HorizontalAlignment="Stretch" 
+								   RowHeight="55"  VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Height="Auto"
+						  CanUserSortColumns="True" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Header="ID" Width="30" >
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,0" VerticalAlignment="Center"  RenderTransformOrigin="0.5,0.5">
+                                <StackPanel.RenderTransform>
+                                    <RotateTransform Angle="270"/>
+                                </StackPanel.RenderTransform>
+                                <TextBlock Text="{Binding OrderNumberFloor}" Style="{StaticResource LabelPrint}"
+                                           HorizontalAlignment="Center"  FontSize="10" FontStyle="Normal" />
+
+                                <StackPanel Orientation="Horizontal" Visibility="{Binding OrderHasParentOrder, Converter={StaticResource visibilityConverter}}" 
+                                            HorizontalAlignment="Center" >
+                                    <TextBlock Text="/" Style="{StaticResource LabelPrint}" 
+                                           HorizontalAlignment="Center"  FontSize="10" FontStyle="Normal" />
+                                    <TextBlock Text="{Binding OrderNumberExp}" Style="{StaticResource LabelPrint}" 
+                                           HorizontalAlignment="Center"  FontSize="10" FontStyle="Normal"/>
+                                </StackPanel>
+                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="№ заявки" SortMemberPath="OrderNumber" Width="70" >
+                    <DataGridTemplateColumn.CellTemplate >
+                        <DataTemplate>
+                            <ContentControl Content="{Binding OrderYearNumber, Converter={StaticResource orderNumberConverter}}" Template="{StaticResource OrderCellNumber}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Состояние"  SortMemberPath="OrderState" Width="80" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding OrderStateStr}" Template="{StaticResource OrderCellState}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Оборудование"  SortMemberPath="SelOrderObject.FullName"  Width="1*"  MinWidth="100" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding FullOrderObjectInfo}"    Template="{StaticResource OrderCellDef}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Текст заявки"  
+													 SortMemberPath="OrderText" Width="2*"   MinWidth="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding OrderText}" Template="{StaticResource OrderCellDef}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="План начало"  SortMemberPath="PlanStartDate"   Width="60">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding PlanStartDate, Converter={StaticResource dateTimeConverter}}"  
+												  Template="{StaticResource OrderCellDef}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="План заверш."  SortMemberPath="PlanStopDate"  Width="60">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding PlanStopDate, Converter={StaticResource dateTimeConverter}}"  
+												   Template="{StaticResource OrderCellDef}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn >
+                <DataGridTemplateColumn Header="Автор"  SortMemberPath="UserCreateOrder.FullName"   >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding UserCreateOrder.FullName}"  Template="{StaticResource OrderCellTimeCreate}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Факт начало"   SortMemberPath="FaktStartDate"  Width="60">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding FaktStartDate, Converter={StaticResource dateTimeConverter}}"  
+												    Template="{StaticResource OrderCellTimeOpen}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Разр. на ввод"   SortMemberPath="FaktStopDate"  Width="60">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding FaktStopDate, Converter={StaticResource dateTimeConverter}}"  
+												   Template="{StaticResource OrderCellTimeClose}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Факт заверш."   SortMemberPath="FaktCompleteDate"  Width="60">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding FaktCompleteDate, Converter={StaticResource dateTimeConverter}}"  
+												   Template="{StaticResource OrderCellTimeEnter}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

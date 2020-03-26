@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e2a43489-d7b6-404d-a9e4-20934c569d9d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8090/CranService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CranService.xsd" MetadataType="Schema" ID="9dfddf1c-bd9d-4f6a-9c6d-5ea591597543" SourceId="1" SourceUrl="http://localhost:8090/CranService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CranService1.xsd" MetadataType="Schema" ID="3844ed9d-c8f1-47dd-9341-7dca1e2abf26" SourceId="1" SourceUrl="http://localhost:8090/CranService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CranService.disco" MetadataType="Disco" ID="acddee18-bf14-4420-970f-32c2ed43d61e" SourceId="1" SourceUrl="http://localhost:8090/CranService.svc?disco" />
+    <MetadataFile FileName="CranService3.xsd" MetadataType="Schema" ID="f71f0c1a-7d12-4c90-83de-2303a1832fef" SourceId="1" SourceUrl="http://localhost:8090/CranService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CranService.wsdl" MetadataType="Wsdl" ID="36cdc9a4-9218-43ab-ad9f-c29698a4d532" SourceId="1" SourceUrl="http://localhost:8090/CranService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CranService1.wsdl" MetadataType="Wsdl" ID="c4051439-9602-4f76-aaf1-183dd97bd583" SourceId="1" SourceUrl="http://localhost:8090/CranService.svc?wsdl" />
+    <MetadataFile FileName="CranService2.xsd" MetadataType="Schema" ID="d0f9f946-79e4-4c1e-a92d-ac559fb16473" SourceId="1" SourceUrl="http://localhost:8090/CranService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
