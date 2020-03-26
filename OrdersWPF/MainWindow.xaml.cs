@@ -18,7 +18,7 @@ using VotGESOrders.AdditService;
 using VotGESOrders.OrdersService;
 
 
-namespace OrdersWPF
+namespace VotGESOrders.Views
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -34,6 +34,7 @@ namespace OrdersWPF
             LoginName.DataContext = OrdersClientContext.Current.CurrentUser;
             LinkEditTree.Visibility = OrdersClientContext.Current.CurrentUser.AllowEditTree ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
             LinkEditUsers.Visibility = OrdersClientContext.Current.CurrentUser.AllowEditUsers ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
+            homeControl.LoadControl();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -45,11 +46,8 @@ namespace OrdersWPF
 
         private void Link1_Click(object sender, RoutedEventArgs e)
         {
-            ContentGrid.Children.Clear();
-            HomeControl homeControl = new HomeControl();
-            ContentGrid.Children.Add(homeControl);
-            homeControl.InitializeComponent();
-            homeControl.LoadControl();
+            
+            //MessageBox.Show(OrdersClientContext.Current.OrderFilterSingle.FilterTypes.Count.ToString());
         }
     }
 }

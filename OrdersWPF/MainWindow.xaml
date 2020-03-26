@@ -1,15 +1,18 @@
-﻿<Window x:Class="OrdersWPF.MainWindow"
+﻿<Window x:Class="VotGESOrders.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:OrdersWPF"
+        xmlns:local="clr-namespace:VotGESOrders.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutRootGridStyle}">
 
         <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}">
-            <Grid x:Name="ContentGrid"/>
+            <Grid x:Name="ContentGrid">
+                <local:HomeControl x:Name="homeControl" Margin="0,20,0,0"/>
+
+            </Grid>
 
         </Border>
 

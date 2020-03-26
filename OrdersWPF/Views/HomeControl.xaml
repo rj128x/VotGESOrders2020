@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:usr="clr-namespace:VotGESOrders.Views"
-             xmlns:local="clr-namespace:VotGESOrders.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch">
@@ -40,9 +39,6 @@
             <Button x:Name="btnMail" Click="btnMail_Click" Content="В почту"
 					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
 
-
-            <Button x:Name="btnFullScreen" Click="btnFullScreen_Click" Content="На весь экран" Visibility="Collapsed"
-					  IsEnabled="{Binding IsBusy, Source={StaticResource globalStatus}, Converter={StaticResource logicNotConverter}}"/>
 
         </StackPanel>
 

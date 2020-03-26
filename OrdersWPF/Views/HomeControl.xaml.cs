@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using VotGESOrders.OrdersService;
 
 namespace VotGESOrders.Views
 {
@@ -27,14 +28,44 @@ namespace VotGESOrders.Views
         public HomeControl()
         {
             InitializeComponent();
+            timerExistChanges = new DispatcherTimer();
+            timerExistChanges.Tick += TimerExistChanges_Tick;
+            timerExistChanges.Interval = new TimeSpan(0, 0, 30);
+
         }
+
+        private void TimerExistChanges_Tick(object sender, EventArgs e)
+        {
+            if (OrdersClientContext.Current.Filter.FilterType != OrderFilterEnum.userFilter)
+            {
+                bool existChanges=  OrdersClientContext.Current.OrdersClient.ExistsChanges(OrdersClientContext.Current.SessionGUID);
+
+                    GlobalStatus.Current.IsError = false;
+                    if (OrdersClientContext.Current.LastUpdate.AddMinutes(10) < DateTime.Now)
+                    {
+                        GlobalStatus.Current.NeedRefresh = true;
+                    }
+                    if (existChanges || GlobalStatus.Current.NeedRefresh)
+                    {
+                        if (GlobalStatus.Current.CanRefresh)
+                        {
+                            OrdersClientContext.Current.RefreshOrders(true);
+                        }
+                        else
+                        {
+                            GlobalStatus.Current.NeedRefresh = true;
+                        }
+                    }
+            }
+        }
+
         public void LoadControl()
         {
-            /*try
+            try
             {
                 timerExistChanges.Start();
             }
-            catch { }*/
+            catch { }
             pnlButtons.DataContext = OrdersClientContext.Current.CurrentUser;
 
             /*OrdersContext.Current.View.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(View_CollectionChanged);
@@ -42,11 +73,6 @@ namespace VotGESOrders.Views
 
             ordersGridControl.ordersGrid.ItemsSource = OrdersClientContext.Current.CurrentOrders;
             //ordersGridControl.ordersGrid.MouseLeftButtonUp += new MouseButtonEventHandler(ordersGrid_MouseLeftButtonUp);
-
-           /* timerExistChanges = new DispatcherTimer();
-            timerExistChanges.Tick += new EventHandler(timerExistChanges_Tick);
-            timerExistChanges.Interval = new TimeSpan(0, 0, 30);
-            timerExistChanges.Start();*/
 
             cntrlOrder.Visibility = System.Windows.Visibility.Collapsed;
             cntrlFilter.DataContext = OrdersClientContext.Current.Filter;
@@ -59,11 +85,11 @@ namespace VotGESOrders.Views
 
         public void CloseControl()
         {
-            /*try
+            try
             {
                 timerExistChanges.Stop();
             }
-            catch { }*/
+            catch { }
         }
 
         private void btnCreateBaseOrder_Click(object sender, RoutedEventArgs e)
