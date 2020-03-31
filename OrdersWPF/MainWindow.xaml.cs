@@ -28,9 +28,21 @@ namespace VotGESOrders.Views
         public MainWindow()
         {
             OrdersClientContext.init();
+            GlobalStatus.Current.init();
+
+            OrdersClientContext.Current.FinishLoadingOrdersEvent += new OrdersClientContext.DelegateLoadedAllData(finish);
             OrdersClientContext.load();
             InitializeComponent();
+            
+
+           
+
             //MessageBox.Show(OrdersClientContext.Current.CurrentOrders.Count.ToString());
+            
+        }
+
+        private void finish()
+        {
             LoginName.DataContext = OrdersClientContext.Current.CurrentUser;
             LinkEditTree.Visibility = OrdersClientContext.Current.CurrentUser.AllowEditTree ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
             LinkEditUsers.Visibility = OrdersClientContext.Current.CurrentUser.AllowEditUsers ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;

@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VotGESOrders.Views"
         mc:Ignorable="d"
-        Title="ChooseObjectsWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="ChooseObjectsWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="99*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="85*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ListBox Name="lstSelectedObjects" ItemsSource="{Binding SelectedObjects}" 
+					DisplayMemberPath="FullName" MouseLeftButtonUp="ListBox_MouseLeftButtonUp" Grid.Row="0" Grid.Column="0"/>
+        <TreeView Name="treeObjects" ItemTemplate="{StaticResource treeTemplate}" Grid.Column="1" Grid.Row="0"
+										  VerticalAlignment="Stretch" 
+										  SelectedItemChanged="treeObjects_SelectedItemChanged" VerticalContentAlignment="Stretch" Grid.ColumnSpan="2"/>
+
+        <StackPanel Orientation="Horizontal"  Grid.Row="1" HorizontalAlignment="Right" Grid.Column="2">
+            <Button x:Name="CancelButton" Content="Отмена" Click="CancelButton_Click" />
+            <Button x:Name="OKButton" Content="Сохранить" Click="OKButton_Click" Grid.Row="1" />
+        </StackPanel>
     </Grid>
 </Window>

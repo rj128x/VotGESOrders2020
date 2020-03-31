@@ -68,11 +68,13 @@ namespace VotGESOrders.Views
             catch { }
             pnlButtons.DataContext = OrdersClientContext.Current.CurrentUser;
 
+            OrdersClientContext.Current.CurrentView.View.CollectionChanged += View_CollectionChanged;
             /*OrdersContext.Current.View.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(View_CollectionChanged);
             OrdersContext.Current.Context.PropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(context_PropertyChanged);*/
 
-            ordersGridControl.ordersGrid.ItemsSource = OrdersClientContext.Current.CurrentOrders;
-            //ordersGridControl.ordersGrid.MouseLeftButtonUp += new MouseButtonEventHandler(ordersGrid_MouseLeftButtonUp);
+            
+            ordersGridControl.ordersGrid.ItemsSource = OrdersClientContext.Current.CurrentView.View;
+            ordersGridControl.ordersGrid.MouseLeftButtonUp += OrdersGrid_MouseLeftButtonUp;
 
             cntrlOrder.Visibility = System.Windows.Visibility.Collapsed;
             cntrlFilter.DataContext = OrdersClientContext.Current.Filter;
@@ -81,6 +83,28 @@ namespace VotGESOrders.Views
             cntrlFilter.lstAllUsers.ItemsSource = OrdersClientContext.Current.ALLUsers;
             cntrlFilter.chooseObjectsWindow = new ChooseObjectsWindow();
             Logger.logMessage("Главная страница загружена");
+        }
+
+        private void OrdersGrid_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Order order = ordersGridControl.ordersGrid.SelectedItem as Order;
+            if (order != null)
+            {
+                cntrlOrder.DataContext = order;
+                if (OrderOperations.Current.CurrentOrder == null)
+                {
+                    cntrlOrder.Visibility = System.Windows.Visibility.Visible;
+                }
+                OrderOperations.Current.CurrentOrder = order;
+            }
+        }
+
+        private void View_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            if (OrderOperations.Current.CurrentOrder == null)
+            {
+                cntrlOrder.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
 
         public void CloseControl()
@@ -94,22 +118,31 @@ namespace VotGESOrders.Views
 
         private void btnCreateBaseOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            if (OrderOperations.Current.CurrentOrder != null)
+            {
+                OrderOperations.Current.initCreateBase(OrderOperations.Current.CurrentOrder);
+            }
         }
 
         private void btnCreateOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            OrderOperations.Current.initCreate();
         }
 
         private void cmbFilterType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            btnVisFilter.Visibility = OrdersClientContext.Current.Filter.FilterType == OrderFilterEnum.userFilter ?
+                System.Windows.Visibility.Visible :
+                System.Windows.Visibility.Collapsed;
+            cntrlFilter.Visibility = OrdersClientContext.Current.Filter.FilterType == OrderFilterEnum.userFilter ?
+                System.Windows.Visibility.Visible :
+                System.Windows.Visibility.Collapsed;
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
-
+            OrdersClientContext.Current.RefreshOrders(true);
+            //OrdersClientContext.Current.CurrentView.Refresh();
         }
 
         private void btnPrint_Click(object sender, RoutedEventArgs e)
@@ -129,12 +162,33 @@ namespace VotGESOrders.Views
 
         private void btnVisDetails_Click(object sender, RoutedEventArgs e)
         {
-
+            if (OrderOperations.Current.CurrentOrder == null)
+            {
+                cntrlOrder.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                if ((cntrlOrder.Visibility == System.Windows.Visibility.Collapsed) && (ordersGridControl.ordersGrid.SelectedItem != null))
+                {
+                    cntrlOrder.Visibility = System.Windows.Visibility.Visible;
+                }
+                else
+                {
+                    cntrlOrder.Visibility = System.Windows.Visibility.Collapsed;
+                }
+            }
         }
 
         private void btnVisFilter_Click(object sender, RoutedEventArgs e)
         {
-
+            if (cntrlFilter.Visibility == System.Windows.Visibility.Visible)
+            {
+                cntrlFilter.Visibility = System.Windows.Visibility.Collapsed;
+            }
+            else
+            {
+                cntrlFilter.Visibility = System.Windows.Visibility.Visible;
+            }
         }
     }
 }

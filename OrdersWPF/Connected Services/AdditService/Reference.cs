@@ -161,32 +161,42 @@ namespace VotGESOrders.AdditService {
         [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/DoWork", ReplyAction="urn:AdditService/DoWorkResponse")]
         void DoWork();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/DoWork", ReplyAction="urn:AdditService/DoWorkResponse")]
-        System.Threading.Tasks.Task DoWorkAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:AdditService/DoWork", ReplyAction="urn:AdditService/DoWorkResponse")]
+        System.IAsyncResult BeginDoWork(System.AsyncCallback callback, object asyncState);
+        
+        void EndDoWork(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/GetAuthenticatedUser", ReplyAction="urn:AdditService/GetAuthenticatedUserResponse")]
         VotGESOrders.AdditService.User GetAuthenticatedUser();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/GetAuthenticatedUser", ReplyAction="urn:AdditService/GetAuthenticatedUserResponse")]
-        System.Threading.Tasks.Task<VotGESOrders.AdditService.User> GetAuthenticatedUserAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:AdditService/GetAuthenticatedUser", ReplyAction="urn:AdditService/GetAuthenticatedUserResponse")]
+        System.IAsyncResult BeginGetAuthenticatedUser(System.AsyncCallback callback, object asyncState);
+        
+        VotGESOrders.AdditService.User EndGetAuthenticatedUser(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/info", ReplyAction="urn:AdditService/infoResponse")]
         void info(string message);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/info", ReplyAction="urn:AdditService/infoResponse")]
-        System.Threading.Tasks.Task infoAsync(string message);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:AdditService/info", ReplyAction="urn:AdditService/infoResponse")]
+        System.IAsyncResult Begininfo(string message, System.AsyncCallback callback, object asyncState);
+        
+        void Endinfo(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/error", ReplyAction="urn:AdditService/errorResponse")]
         void error(string message);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/error", ReplyAction="urn:AdditService/errorResponse")]
-        System.Threading.Tasks.Task errorAsync(string message);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:AdditService/error", ReplyAction="urn:AdditService/errorResponse")]
+        System.IAsyncResult Beginerror(string message, System.AsyncCallback callback, object asyncState);
+        
+        void Enderror(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/debug", ReplyAction="urn:AdditService/debugResponse")]
         void debug(string message);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:AdditService/debug", ReplyAction="urn:AdditService/debugResponse")]
-        System.Threading.Tasks.Task debugAsync(string message);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:AdditService/debug", ReplyAction="urn:AdditService/debugResponse")]
+        System.IAsyncResult Begindebug(string message, System.AsyncCallback callback, object asyncState);
+        
+        void Enddebug(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -195,7 +205,56 @@ namespace VotGESOrders.AdditService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAuthenticatedUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAuthenticatedUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public VotGESOrders.AdditService.User Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((VotGESOrders.AdditService.User)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class AdditServiceClient : System.ServiceModel.ClientBase<VotGESOrders.AdditService.AdditService>, VotGESOrders.AdditService.AdditService {
+        
+        private BeginOperationDelegate onBeginDoWorkDelegate;
+        
+        private EndOperationDelegate onEndDoWorkDelegate;
+        
+        private System.Threading.SendOrPostCallback onDoWorkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAuthenticatedUserDelegate;
+        
+        private EndOperationDelegate onEndGetAuthenticatedUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAuthenticatedUserCompletedDelegate;
+        
+        private BeginOperationDelegate onBegininfoDelegate;
+        
+        private EndOperationDelegate onEndinfoDelegate;
+        
+        private System.Threading.SendOrPostCallback oninfoCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginerrorDelegate;
+        
+        private EndOperationDelegate onEnderrorDelegate;
+        
+        private System.Threading.SendOrPostCallback onerrorCompletedDelegate;
+        
+        private BeginOperationDelegate onBegindebugDelegate;
+        
+        private EndOperationDelegate onEnddebugDelegate;
+        
+        private System.Threading.SendOrPostCallback ondebugCompletedDelegate;
         
         public AdditServiceClient() {
         }
@@ -216,44 +275,256 @@ namespace VotGESOrders.AdditService {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> DoWorkCompleted;
+        
+        public event System.EventHandler<GetAuthenticatedUserCompletedEventArgs> GetAuthenticatedUserCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> infoCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> errorCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> debugCompleted;
+        
         public void DoWork() {
             base.Channel.DoWork();
         }
         
-        public System.Threading.Tasks.Task DoWorkAsync() {
-            return base.Channel.DoWorkAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDoWork(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDoWork(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndDoWork(System.IAsyncResult result) {
+            base.Channel.EndDoWork(result);
+        }
+        
+        private System.IAsyncResult OnBeginDoWork(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginDoWork(callback, asyncState);
+        }
+        
+        private object[] OnEndDoWork(System.IAsyncResult result) {
+            this.EndDoWork(result);
+            return null;
+        }
+        
+        private void OnDoWorkCompleted(object state) {
+            if ((this.DoWorkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DoWorkCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DoWorkAsync() {
+            this.DoWorkAsync(null);
+        }
+        
+        public void DoWorkAsync(object userState) {
+            if ((this.onBeginDoWorkDelegate == null)) {
+                this.onBeginDoWorkDelegate = new BeginOperationDelegate(this.OnBeginDoWork);
+            }
+            if ((this.onEndDoWorkDelegate == null)) {
+                this.onEndDoWorkDelegate = new EndOperationDelegate(this.OnEndDoWork);
+            }
+            if ((this.onDoWorkCompletedDelegate == null)) {
+                this.onDoWorkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDoWorkCompleted);
+            }
+            base.InvokeAsync(this.onBeginDoWorkDelegate, null, this.onEndDoWorkDelegate, this.onDoWorkCompletedDelegate, userState);
         }
         
         public VotGESOrders.AdditService.User GetAuthenticatedUser() {
             return base.Channel.GetAuthenticatedUser();
         }
         
-        public System.Threading.Tasks.Task<VotGESOrders.AdditService.User> GetAuthenticatedUserAsync() {
-            return base.Channel.GetAuthenticatedUserAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAuthenticatedUser(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAuthenticatedUser(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public VotGESOrders.AdditService.User EndGetAuthenticatedUser(System.IAsyncResult result) {
+            return base.Channel.EndGetAuthenticatedUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetAuthenticatedUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetAuthenticatedUser(callback, asyncState);
+        }
+        
+        private object[] OnEndGetAuthenticatedUser(System.IAsyncResult result) {
+            VotGESOrders.AdditService.User retVal = this.EndGetAuthenticatedUser(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAuthenticatedUserCompleted(object state) {
+            if ((this.GetAuthenticatedUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAuthenticatedUserCompleted(this, new GetAuthenticatedUserCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAuthenticatedUserAsync() {
+            this.GetAuthenticatedUserAsync(null);
+        }
+        
+        public void GetAuthenticatedUserAsync(object userState) {
+            if ((this.onBeginGetAuthenticatedUserDelegate == null)) {
+                this.onBeginGetAuthenticatedUserDelegate = new BeginOperationDelegate(this.OnBeginGetAuthenticatedUser);
+            }
+            if ((this.onEndGetAuthenticatedUserDelegate == null)) {
+                this.onEndGetAuthenticatedUserDelegate = new EndOperationDelegate(this.OnEndGetAuthenticatedUser);
+            }
+            if ((this.onGetAuthenticatedUserCompletedDelegate == null)) {
+                this.onGetAuthenticatedUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAuthenticatedUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAuthenticatedUserDelegate, null, this.onEndGetAuthenticatedUserDelegate, this.onGetAuthenticatedUserCompletedDelegate, userState);
         }
         
         public void info(string message) {
             base.Channel.info(message);
         }
         
-        public System.Threading.Tasks.Task infoAsync(string message) {
-            return base.Channel.infoAsync(message);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begininfo(string message, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begininfo(message, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void Endinfo(System.IAsyncResult result) {
+            base.Channel.Endinfo(result);
+        }
+        
+        private System.IAsyncResult OnBegininfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string message = ((string)(inValues[0]));
+            return this.Begininfo(message, callback, asyncState);
+        }
+        
+        private object[] OnEndinfo(System.IAsyncResult result) {
+            this.Endinfo(result);
+            return null;
+        }
+        
+        private void OninfoCompleted(object state) {
+            if ((this.infoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.infoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void infoAsync(string message) {
+            this.infoAsync(message, null);
+        }
+        
+        public void infoAsync(string message, object userState) {
+            if ((this.onBegininfoDelegate == null)) {
+                this.onBegininfoDelegate = new BeginOperationDelegate(this.OnBegininfo);
+            }
+            if ((this.onEndinfoDelegate == null)) {
+                this.onEndinfoDelegate = new EndOperationDelegate(this.OnEndinfo);
+            }
+            if ((this.oninfoCompletedDelegate == null)) {
+                this.oninfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OninfoCompleted);
+            }
+            base.InvokeAsync(this.onBegininfoDelegate, new object[] {
+                        message}, this.onEndinfoDelegate, this.oninfoCompletedDelegate, userState);
         }
         
         public void error(string message) {
             base.Channel.error(message);
         }
         
-        public System.Threading.Tasks.Task errorAsync(string message) {
-            return base.Channel.errorAsync(message);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Beginerror(string message, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Beginerror(message, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void Enderror(System.IAsyncResult result) {
+            base.Channel.Enderror(result);
+        }
+        
+        private System.IAsyncResult OnBeginerror(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string message = ((string)(inValues[0]));
+            return this.Beginerror(message, callback, asyncState);
+        }
+        
+        private object[] OnEnderror(System.IAsyncResult result) {
+            this.Enderror(result);
+            return null;
+        }
+        
+        private void OnerrorCompleted(object state) {
+            if ((this.errorCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.errorCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void errorAsync(string message) {
+            this.errorAsync(message, null);
+        }
+        
+        public void errorAsync(string message, object userState) {
+            if ((this.onBeginerrorDelegate == null)) {
+                this.onBeginerrorDelegate = new BeginOperationDelegate(this.OnBeginerror);
+            }
+            if ((this.onEnderrorDelegate == null)) {
+                this.onEnderrorDelegate = new EndOperationDelegate(this.OnEnderror);
+            }
+            if ((this.onerrorCompletedDelegate == null)) {
+                this.onerrorCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnerrorCompleted);
+            }
+            base.InvokeAsync(this.onBeginerrorDelegate, new object[] {
+                        message}, this.onEnderrorDelegate, this.onerrorCompletedDelegate, userState);
         }
         
         public void debug(string message) {
             base.Channel.debug(message);
         }
         
-        public System.Threading.Tasks.Task debugAsync(string message) {
-            return base.Channel.debugAsync(message);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult Begindebug(string message, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.Begindebug(message, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void Enddebug(System.IAsyncResult result) {
+            base.Channel.Enddebug(result);
+        }
+        
+        private System.IAsyncResult OnBegindebug(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string message = ((string)(inValues[0]));
+            return this.Begindebug(message, callback, asyncState);
+        }
+        
+        private object[] OnEnddebug(System.IAsyncResult result) {
+            this.Enddebug(result);
+            return null;
+        }
+        
+        private void OndebugCompleted(object state) {
+            if ((this.debugCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.debugCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void debugAsync(string message) {
+            this.debugAsync(message, null);
+        }
+        
+        public void debugAsync(string message, object userState) {
+            if ((this.onBegindebugDelegate == null)) {
+                this.onBegindebugDelegate = new BeginOperationDelegate(this.OnBegindebug);
+            }
+            if ((this.onEnddebugDelegate == null)) {
+                this.onEnddebugDelegate = new EndOperationDelegate(this.OnEnddebug);
+            }
+            if ((this.ondebugCompletedDelegate == null)) {
+                this.ondebugCompletedDelegate = new System.Threading.SendOrPostCallback(this.OndebugCompleted);
+            }
+            base.InvokeAsync(this.onBegindebugDelegate, new object[] {
+                        message}, this.onEnddebugDelegate, this.ondebugCompletedDelegate, userState);
         }
     }
 }

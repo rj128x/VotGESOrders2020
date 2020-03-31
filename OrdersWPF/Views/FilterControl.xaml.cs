@@ -20,11 +20,9 @@ namespace VotGESOrders.Views
 		public FilterControl() {
 			InitializeComponent();
 			//filter = DataContext as OrderFilter;
-			try {
+			if (OrdersClientContext.Current!=null && OrdersClientContext.Current.OrderFilterSingle != null) { 
 				cmbFilterDate.ItemsSource = OrdersClientContext.Current.OrderFilterSingle.DateFilterTypes;
 				cmbFilterUser.ItemsSource = OrdersClientContext.Current.OrderFilterSingle.UserFilterTypes;
-			}
-			catch{
 			}
 		}		
 
@@ -49,8 +47,9 @@ namespace VotGESOrders.Views
 		}
 				
 		private void btnChooseObjects_Click(object sender, RoutedEventArgs e) {
+			chooseObjectsWindow = new ChooseObjectsWindow();
 			chooseObjectsWindow.CurrentFilter = DataContext as OrderFilter;
-			chooseObjectsWindow.Show();
+			chooseObjectsWindow.ShowDialog();
 		}
 
 	}

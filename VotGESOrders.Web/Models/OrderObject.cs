@@ -5,12 +5,13 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using VotGESOrders.Web.ADONETEntities;
 using VotGESOrders.Web.Logging;
+using System.Runtime.Serialization;
 
 namespace VotGESOrders.Web.Models
 {
+
 	public class OrderObject
 	{
-
 		public string ObjectName { get; set; }
 
 		private string fullName;
@@ -22,12 +23,15 @@ namespace VotGESOrders.Web.Models
 
 		[Key]
 		public int ObjectID { get; set; }
+
 		public int ParentObjectID { get; set; }
+
 		public bool ShowInFullName { get; set; }
 
 
 		private OrderObject parentObject;
 		[Association("Order_OrderObject1", "ParentObjectID", "ObjectID")]
+
 		public OrderObject ParentObject {
 			get {
 				return parentObject;
@@ -40,6 +44,7 @@ namespace VotGESOrders.Web.Models
 
 
 		[Association("Order_OrderObject2", "ObjectID", "ParentObjectID")]
+
 		public List<OrderObject> ChildObjects { get; set; }
 
 

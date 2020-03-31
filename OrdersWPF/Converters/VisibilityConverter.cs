@@ -12,7 +12,7 @@ using System.Windows.Data;
 
 namespace VotGESOrders.Converters
 {
-	public class VisibilityConverter : IValueConverter
+	public class VisibilityConverter: IValueConverter
 	{
 		#region IValueConverter Members
 		public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {

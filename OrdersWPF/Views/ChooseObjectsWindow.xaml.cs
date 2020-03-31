@@ -22,9 +22,51 @@ namespace VotGESOrders.Views
     {
         public OrderFilter CurrentFilter { get; set; }
         protected List<OrderObject> prevSel;
-        public ChooseObjectsWindow()
-        {
-            InitializeComponent();
-        }
-    }
+		public ChooseObjectsWindow()
+		{
+			InitializeComponent();
+			treeObjects.ItemsSource = from OrderObject o in OrdersClientContext.Current.AllOrderObjects where o.ObjectID == 0 select o;
+
+		}
+	
+
+		private void OKButton_Click(object sender, RoutedEventArgs e)
+		{
+			this.DialogResult = true;
+		}
+
+		private void CancelButton_Click(object sender, RoutedEventArgs e)
+		{
+			CurrentFilter.SelectedObjects.Clear();
+			foreach (OrderObject obj in prevSel)
+			{
+				CurrentFilter.SelectedObjects.Add(obj);
+			}
+			this.DialogResult = false;
+		}
+
+		private void ListBox_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			OrderObject obj = lstSelectedObjects.SelectedItem as OrderObject;
+			if (obj != null)
+			{
+				CurrentFilter.SelectedObjects.Remove(obj);
+			}
+		}
+
+		private void treeObjects_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+		{
+			OrderObject obj = treeObjects.SelectedItem as OrderObject;
+			if ((obj != null) && (!CurrentFilter.SelectedObjects.Contains(obj)))
+			{
+				CurrentFilter.SelectedObjects.Add(obj);
+			}
+		}
+
+		private void Window_Loaded(object sender, RoutedEventArgs e)
+		{
+			LayoutRoot.DataContext = CurrentFilter;
+			prevSel = CurrentFilter.SelectedObjects.ToList();
+		}
+	}
 }

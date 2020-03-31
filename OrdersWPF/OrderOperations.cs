@@ -181,6 +181,7 @@ namespace VotGESOrders
 		}
 
 		public void initCreate() {
+			newOrderWindow = new NewOrderWindow();
 			GlobalStatus.Current.IsChangingOrder = true;
 			Order newOrder=new Order();
 			newOrder.OrderOperation = OrderOperationEnum.create;

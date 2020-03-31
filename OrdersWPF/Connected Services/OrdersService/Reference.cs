@@ -47,28 +47,28 @@ namespace VotGESOrders.OrdersService {
         private string OrderObjectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<string> OrderStatesField;
+        private System.Collections.ObjectModel.ObservableCollection<string> OrderStatesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderTextField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<string> OrderTypesField;
+        private System.Collections.ObjectModel.ObservableCollection<string> OrderTypesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<VotGESOrders.OrdersService.OrderObject> SelectedObjectsField;
+        private System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> SelectedObjectsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<int> SelectedObjectsArrayField;
+        private System.Collections.ObjectModel.ObservableCollection<int> SelectedObjectsArrayField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SelectedObjectsStrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<VotGESOrders.OrdersService.OrdersUser> SelectedUsersField;
+        private System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> SelectedUsersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<int> SelectedUsersArrayField;
+        private System.Collections.ObjectModel.ObservableCollection<int> SelectedUsersArrayField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SelectedUsersStrField;
@@ -275,7 +275,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<string> OrderStates {
+        public System.Collections.ObjectModel.ObservableCollection<string> OrderStates {
             get {
                 return this.OrderStatesField;
             }
@@ -301,7 +301,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<string> OrderTypes {
+        public System.Collections.ObjectModel.ObservableCollection<string> OrderTypes {
             get {
                 return this.OrderTypesField;
             }
@@ -314,7 +314,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.OrderObject> SelectedObjects {
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> SelectedObjects {
             get {
                 return this.SelectedObjectsField;
             }
@@ -327,7 +327,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<int> SelectedObjectsArray {
+        public System.Collections.ObjectModel.ObservableCollection<int> SelectedObjectsArray {
             get {
                 return this.SelectedObjectsArrayField;
             }
@@ -353,7 +353,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.OrdersUser> SelectedUsers {
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> SelectedUsers {
             get {
                 return this.SelectedUsersField;
             }
@@ -366,7 +366,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<int> SelectedUsersArray {
+        public System.Collections.ObjectModel.ObservableCollection<int> SelectedUsersArray {
             get {
                 return this.SelectedUsersArrayField;
             }
@@ -854,7 +854,7 @@ namespace VotGESOrders.OrdersService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<VotGESOrders.OrdersService.OrderObject> ChildObjectsField;
+        private System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> ChildObjectsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FullNameField;
@@ -885,7 +885,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.OrderObject> ChildObjects {
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> ChildObjects {
             get {
                 return this.ChildObjectsField;
             }
@@ -1040,7 +1040,7 @@ namespace VotGESOrders.OrdersService {
         private string MailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<string> MailsField;
+        private System.Collections.ObjectModel.ObservableCollection<string> MailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -1275,7 +1275,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<string> Mails {
+        public System.Collections.ObjectModel.ObservableCollection<string> Mails {
             get {
                 return this.MailsField;
             }
@@ -1572,13 +1572,58 @@ namespace VotGESOrders.OrdersService {
         private string AgreeTextField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<VotGESOrders.OrdersService.OrdersUser> AgreeUsersField;
+        private System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> AgreeUsersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.Dictionary<int, string> AgreeUsersDictField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AgreeUsersIDSTextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowCancelOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowChangeOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowCloseOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowCommentOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowCompleteOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowCompleteWithoutEnterOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowEditOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowExtendOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowOpenOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowRejectCancelOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowRejectCloseOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowRejectCompleteOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowRejectOpenOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowRejectReviewOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowReviewOrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CancelTextField;
@@ -1859,7 +1904,7 @@ namespace VotGESOrders.OrdersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.OrdersUser> AgreeUsers {
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> AgreeUsers {
             get {
                 return this.AgreeUsersField;
             }
@@ -1893,6 +1938,201 @@ namespace VotGESOrders.OrdersService {
                 if ((object.ReferenceEquals(this.AgreeUsersIDSTextField, value) != true)) {
                     this.AgreeUsersIDSTextField = value;
                     this.RaisePropertyChanged("AgreeUsersIDSText");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowCancelOrder {
+            get {
+                return this.AllowCancelOrderField;
+            }
+            set {
+                if ((this.AllowCancelOrderField.Equals(value) != true)) {
+                    this.AllowCancelOrderField = value;
+                    this.RaisePropertyChanged("AllowCancelOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowChangeOrder {
+            get {
+                return this.AllowChangeOrderField;
+            }
+            set {
+                if ((this.AllowChangeOrderField.Equals(value) != true)) {
+                    this.AllowChangeOrderField = value;
+                    this.RaisePropertyChanged("AllowChangeOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowCloseOrder {
+            get {
+                return this.AllowCloseOrderField;
+            }
+            set {
+                if ((this.AllowCloseOrderField.Equals(value) != true)) {
+                    this.AllowCloseOrderField = value;
+                    this.RaisePropertyChanged("AllowCloseOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowCommentOrder {
+            get {
+                return this.AllowCommentOrderField;
+            }
+            set {
+                if ((this.AllowCommentOrderField.Equals(value) != true)) {
+                    this.AllowCommentOrderField = value;
+                    this.RaisePropertyChanged("AllowCommentOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowCompleteOrder {
+            get {
+                return this.AllowCompleteOrderField;
+            }
+            set {
+                if ((this.AllowCompleteOrderField.Equals(value) != true)) {
+                    this.AllowCompleteOrderField = value;
+                    this.RaisePropertyChanged("AllowCompleteOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowCompleteWithoutEnterOrder {
+            get {
+                return this.AllowCompleteWithoutEnterOrderField;
+            }
+            set {
+                if ((this.AllowCompleteWithoutEnterOrderField.Equals(value) != true)) {
+                    this.AllowCompleteWithoutEnterOrderField = value;
+                    this.RaisePropertyChanged("AllowCompleteWithoutEnterOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowEditOrder {
+            get {
+                return this.AllowEditOrderField;
+            }
+            set {
+                if ((this.AllowEditOrderField.Equals(value) != true)) {
+                    this.AllowEditOrderField = value;
+                    this.RaisePropertyChanged("AllowEditOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowExtendOrder {
+            get {
+                return this.AllowExtendOrderField;
+            }
+            set {
+                if ((this.AllowExtendOrderField.Equals(value) != true)) {
+                    this.AllowExtendOrderField = value;
+                    this.RaisePropertyChanged("AllowExtendOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowOpenOrder {
+            get {
+                return this.AllowOpenOrderField;
+            }
+            set {
+                if ((this.AllowOpenOrderField.Equals(value) != true)) {
+                    this.AllowOpenOrderField = value;
+                    this.RaisePropertyChanged("AllowOpenOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowRejectCancelOrder {
+            get {
+                return this.AllowRejectCancelOrderField;
+            }
+            set {
+                if ((this.AllowRejectCancelOrderField.Equals(value) != true)) {
+                    this.AllowRejectCancelOrderField = value;
+                    this.RaisePropertyChanged("AllowRejectCancelOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowRejectCloseOrder {
+            get {
+                return this.AllowRejectCloseOrderField;
+            }
+            set {
+                if ((this.AllowRejectCloseOrderField.Equals(value) != true)) {
+                    this.AllowRejectCloseOrderField = value;
+                    this.RaisePropertyChanged("AllowRejectCloseOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowRejectCompleteOrder {
+            get {
+                return this.AllowRejectCompleteOrderField;
+            }
+            set {
+                if ((this.AllowRejectCompleteOrderField.Equals(value) != true)) {
+                    this.AllowRejectCompleteOrderField = value;
+                    this.RaisePropertyChanged("AllowRejectCompleteOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowRejectOpenOrder {
+            get {
+                return this.AllowRejectOpenOrderField;
+            }
+            set {
+                if ((this.AllowRejectOpenOrderField.Equals(value) != true)) {
+                    this.AllowRejectOpenOrderField = value;
+                    this.RaisePropertyChanged("AllowRejectOpenOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowRejectReviewOrder {
+            get {
+                return this.AllowRejectReviewOrderField;
+            }
+            set {
+                if ((this.AllowRejectReviewOrderField.Equals(value) != true)) {
+                    this.AllowRejectReviewOrderField = value;
+                    this.RaisePropertyChanged("AllowRejectReviewOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowReviewOrder {
+            get {
+                return this.AllowReviewOrderField;
+            }
+            set {
+                if ((this.AllowReviewOrderField.Equals(value) != true)) {
+                    this.AllowReviewOrderField = value;
+                    this.RaisePropertyChanged("AllowReviewOrder");
                 }
             }
         }
@@ -3051,176 +3291,234 @@ namespace VotGESOrders.OrdersService {
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/InitFilter", ReplyAction="urn:OrdersService/InitFilterResponse")]
         VotGESOrders.OrdersService.OrderFilter InitFilter();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/InitFilter", ReplyAction="urn:OrdersService/InitFilterResponse")]
-        System.Threading.Tasks.Task<VotGESOrders.OrdersService.OrderFilter> InitFilterAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/InitFilter", ReplyAction="urn:OrdersService/InitFilterResponse")]
+        System.IAsyncResult BeginInitFilter(System.AsyncCallback callback, object asyncState);
+        
+        VotGESOrders.OrdersService.OrderFilter EndInitFilter(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/InitOrderInfo", ReplyAction="urn:OrdersService/InitOrderInfoResponse")]
         VotGESOrders.OrdersService.OrderInfo InitOrderInfo();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/InitOrderInfo", ReplyAction="urn:OrdersService/InitOrderInfoResponse")]
-        System.Threading.Tasks.Task<VotGESOrders.OrdersService.OrderInfo> InitOrderInfoAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/InitOrderInfo", ReplyAction="urn:OrdersService/InitOrderInfoResponse")]
+        System.IAsyncResult BeginInitOrderInfo(System.AsyncCallback callback, object asyncState);
+        
+        VotGESOrders.OrdersService.OrderInfo EndInitOrderInfo(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/LoadOrders", ReplyAction="urn:OrdersService/LoadOrdersResponse")]
-        System.Collections.Generic.List<VotGESOrders.OrdersService.Order> LoadOrders(System.Guid guid);
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> LoadOrders(System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/LoadOrders", ReplyAction="urn:OrdersService/LoadOrdersResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.Order>> LoadOrdersAsync(System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/LoadOrders", ReplyAction="urn:OrdersService/LoadOrdersResponse")]
+        System.IAsyncResult BeginLoadOrders(System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> EndLoadOrders(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/GetFilteredOrdersFromFilter", ReplyAction="urn:OrdersService/GetFilteredOrdersFromFilterResponse")]
-        System.Collections.Generic.List<VotGESOrders.OrdersService.Order> GetFilteredOrdersFromFilter(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid);
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> GetFilteredOrdersFromFilter(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/GetFilteredOrdersFromFilter", ReplyAction="urn:OrdersService/GetFilteredOrdersFromFilterResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.Order>> GetFilteredOrdersFromFilterAsync(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/GetFilteredOrdersFromFilter", ReplyAction="urn:OrdersService/GetFilteredOrdersFromFilterResponse")]
+        System.IAsyncResult BeginGetFilteredOrdersFromFilter(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> EndGetFilteredOrdersFromFilter(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/GetFilteredOrdersFromFilterToMail", ReplyAction="urn:OrdersService/GetFilteredOrdersFromFilterToMailResponse")]
-        System.Collections.Generic.List<VotGESOrders.OrdersService.Order> GetFilteredOrdersFromFilterToMail(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid);
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> GetFilteredOrdersFromFilterToMail(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/GetFilteredOrdersFromFilterToMail", ReplyAction="urn:OrdersService/GetFilteredOrdersFromFilterToMailResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.Order>> GetFilteredOrdersFromFilterToMailAsync(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/GetFilteredOrdersFromFilterToMail", ReplyAction="urn:OrdersService/GetFilteredOrdersFromFilterToMailResponse")]
+        System.IAsyncResult BeginGetFilteredOrdersFromFilterToMail(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> EndGetFilteredOrdersFromFilterToMail(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/LoadOrdersUsers", ReplyAction="urn:OrdersService/LoadOrdersUsersResponse")]
-        System.Collections.Generic.List<VotGESOrders.OrdersService.OrdersUser> LoadOrdersUsers();
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> LoadOrdersUsers();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/LoadOrdersUsers", ReplyAction="urn:OrdersService/LoadOrdersUsersResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.OrdersUser>> LoadOrdersUsersAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/LoadOrdersUsers", ReplyAction="urn:OrdersService/LoadOrdersUsersResponse")]
+        System.IAsyncResult BeginLoadOrdersUsers(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> EndLoadOrdersUsers(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/LoadOrderObjects", ReplyAction="urn:OrdersService/LoadOrderObjectsResponse")]
-        System.Collections.Generic.List<VotGESOrders.OrdersService.OrderObject> LoadOrderObjects();
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> LoadOrderObjects();
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/LoadOrderObjects", ReplyAction="urn:OrdersService/LoadOrderObjectsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.OrderObject>> LoadOrderObjectsAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/LoadOrderObjects", ReplyAction="urn:OrdersService/LoadOrderObjectsResponse")]
+        System.IAsyncResult BeginLoadOrderObjects(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> EndLoadOrderObjects(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterNew", ReplyAction="urn:OrdersService/RegisterNewResponse")]
         void RegisterNew(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterNew", ReplyAction="urn:OrdersService/RegisterNewResponse")]
-        System.Threading.Tasks.Task RegisterNewAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterNew", ReplyAction="urn:OrdersService/RegisterNewResponse")]
+        System.IAsyncResult BeginRegisterNew(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterNew(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterChangeOrder", ReplyAction="urn:OrdersService/RegisterChangeOrderResponse")]
         void RegisterChangeOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterChangeOrder", ReplyAction="urn:OrdersService/RegisterChangeOrderResponse")]
-        System.Threading.Tasks.Task RegisterChangeOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterChangeOrder", ReplyAction="urn:OrdersService/RegisterChangeOrderResponse")]
+        System.IAsyncResult BeginRegisterChangeOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterChangeOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterAcceptOrder", ReplyAction="urn:OrdersService/RegisterAcceptOrderResponse")]
         void RegisterAcceptOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterAcceptOrder", ReplyAction="urn:OrdersService/RegisterAcceptOrderResponse")]
-        System.Threading.Tasks.Task RegisterAcceptOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterAcceptOrder", ReplyAction="urn:OrdersService/RegisterAcceptOrderResponse")]
+        System.IAsyncResult BeginRegisterAcceptOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterAcceptOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterBanOrder", ReplyAction="urn:OrdersService/RegisterBanOrderResponse")]
         void RegisterBanOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterBanOrder", ReplyAction="urn:OrdersService/RegisterBanOrderResponse")]
-        System.Threading.Tasks.Task RegisterBanOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterBanOrder", ReplyAction="urn:OrdersService/RegisterBanOrderResponse")]
+        System.IAsyncResult BeginRegisterBanOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterBanOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterCancelOrder", ReplyAction="urn:OrdersService/RegisterCancelOrderResponse")]
         void RegisterCancelOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterCancelOrder", ReplyAction="urn:OrdersService/RegisterCancelOrderResponse")]
-        System.Threading.Tasks.Task RegisterCancelOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterCancelOrder", ReplyAction="urn:OrdersService/RegisterCancelOrderResponse")]
+        System.IAsyncResult BeginRegisterCancelOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterCancelOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterOpenOrder", ReplyAction="urn:OrdersService/RegisterOpenOrderResponse")]
         void RegisterOpenOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterOpenOrder", ReplyAction="urn:OrdersService/RegisterOpenOrderResponse")]
-        System.Threading.Tasks.Task RegisterOpenOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterOpenOrder", ReplyAction="urn:OrdersService/RegisterOpenOrderResponse")]
+        System.IAsyncResult BeginRegisterOpenOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterOpenOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterCloseOrder", ReplyAction="urn:OrdersService/RegisterCloseOrderResponse")]
         void RegisterCloseOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterCloseOrder", ReplyAction="urn:OrdersService/RegisterCloseOrderResponse")]
-        System.Threading.Tasks.Task RegisterCloseOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterCloseOrder", ReplyAction="urn:OrdersService/RegisterCloseOrderResponse")]
+        System.IAsyncResult BeginRegisterCloseOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterCloseOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterCompleteOrder", ReplyAction="urn:OrdersService/RegisterCompleteOrderResponse")]
         void RegisterCompleteOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterCompleteOrder", ReplyAction="urn:OrdersService/RegisterCompleteOrderResponse")]
-        System.Threading.Tasks.Task RegisterCompleteOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterCompleteOrder", ReplyAction="urn:OrdersService/RegisterCompleteOrderResponse")]
+        System.IAsyncResult BeginRegisterCompleteOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterCompleteOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectReviewOrder", ReplyAction="urn:OrdersService/RegisterRejectReviewOrderResponse")]
         void RegisterRejectReviewOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectReviewOrder", ReplyAction="urn:OrdersService/RegisterRejectReviewOrderResponse")]
-        System.Threading.Tasks.Task RegisterRejectReviewOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterRejectReviewOrder", ReplyAction="urn:OrdersService/RegisterRejectReviewOrderResponse")]
+        System.IAsyncResult BeginRegisterRejectReviewOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterRejectReviewOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectCancelOrder", ReplyAction="urn:OrdersService/RegisterRejectCancelOrderResponse")]
         void RegisterRejectCancelOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectCancelOrder", ReplyAction="urn:OrdersService/RegisterRejectCancelOrderResponse")]
-        System.Threading.Tasks.Task RegisterRejectCancelOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterRejectCancelOrder", ReplyAction="urn:OrdersService/RegisterRejectCancelOrderResponse")]
+        System.IAsyncResult BeginRegisterRejectCancelOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterRejectCancelOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectOpenOrder", ReplyAction="urn:OrdersService/RegisterRejectOpenOrderResponse")]
         void RegisterRejectOpenOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectOpenOrder", ReplyAction="urn:OrdersService/RegisterRejectOpenOrderResponse")]
-        System.Threading.Tasks.Task RegisterRejectOpenOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterRejectOpenOrder", ReplyAction="urn:OrdersService/RegisterRejectOpenOrderResponse")]
+        System.IAsyncResult BeginRegisterRejectOpenOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterRejectOpenOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectCloseOrder", ReplyAction="urn:OrdersService/RegisterRejectCloseOrderResponse")]
         void RegisterRejectCloseOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectCloseOrder", ReplyAction="urn:OrdersService/RegisterRejectCloseOrderResponse")]
-        System.Threading.Tasks.Task RegisterRejectCloseOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterRejectCloseOrder", ReplyAction="urn:OrdersService/RegisterRejectCloseOrderResponse")]
+        System.IAsyncResult BeginRegisterRejectCloseOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterRejectCloseOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectCompleteOrder", ReplyAction="urn:OrdersService/RegisterRejectCompleteOrderResponse")]
         void RegisterRejectCompleteOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterRejectCompleteOrder", ReplyAction="urn:OrdersService/RegisterRejectCompleteOrderResponse")]
-        System.Threading.Tasks.Task RegisterRejectCompleteOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterRejectCompleteOrder", ReplyAction="urn:OrdersService/RegisterRejectCompleteOrderResponse")]
+        System.IAsyncResult BeginRegisterRejectCompleteOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterRejectCompleteOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterEditOrder", ReplyAction="urn:OrdersService/RegisterEditOrderResponse")]
         void RegisterEditOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterEditOrder", ReplyAction="urn:OrdersService/RegisterEditOrderResponse")]
-        System.Threading.Tasks.Task RegisterEditOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterEditOrder", ReplyAction="urn:OrdersService/RegisterEditOrderResponse")]
+        System.IAsyncResult BeginRegisterEditOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterEditOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterAddComment", ReplyAction="urn:OrdersService/RegisterAddCommentResponse")]
         void RegisterAddComment(VotGESOrders.OrdersService.Order order, string commentText, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterAddComment", ReplyAction="urn:OrdersService/RegisterAddCommentResponse")]
-        System.Threading.Tasks.Task RegisterAddCommentAsync(VotGESOrders.OrdersService.Order order, string commentText, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterAddComment", ReplyAction="urn:OrdersService/RegisterAddCommentResponse")]
+        System.IAsyncResult BeginRegisterAddComment(VotGESOrders.OrdersService.Order order, string commentText, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterAddComment(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/ReloadOrder", ReplyAction="urn:OrdersService/ReloadOrderResponse")]
         void ReloadOrder(VotGESOrders.OrdersService.Order order, System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/ReloadOrder", ReplyAction="urn:OrdersService/ReloadOrderResponse")]
-        System.Threading.Tasks.Task ReloadOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/ReloadOrder", ReplyAction="urn:OrdersService/ReloadOrderResponse")]
+        System.IAsyncResult BeginReloadOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        void EndReloadOrder(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/ExistsChanges", ReplyAction="urn:OrdersService/ExistsChangesResponse")]
         bool ExistsChanges(System.Guid guid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/ExistsChanges", ReplyAction="urn:OrdersService/ExistsChangesResponse")]
-        System.Threading.Tasks.Task<bool> ExistsChangesAsync(System.Guid guid);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/ExistsChanges", ReplyAction="urn:OrdersService/ExistsChangesResponse")]
+        System.IAsyncResult BeginExistsChanges(System.Guid guid, System.AsyncCallback callback, object asyncState);
+        
+        bool EndExistsChanges(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/UpdateOrderObject", ReplyAction="urn:OrdersService/UpdateOrderObjectResponse")]
         void UpdateOrderObject(VotGESOrders.OrdersService.OrderObject obj);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/UpdateOrderObject", ReplyAction="urn:OrdersService/UpdateOrderObjectResponse")]
-        System.Threading.Tasks.Task UpdateOrderObjectAsync(VotGESOrders.OrdersService.OrderObject obj);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/UpdateOrderObject", ReplyAction="urn:OrdersService/UpdateOrderObjectResponse")]
+        System.IAsyncResult BeginUpdateOrderObject(VotGESOrders.OrdersService.OrderObject obj, System.AsyncCallback callback, object asyncState);
+        
+        void EndUpdateOrderObject(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterChangeObject", ReplyAction="urn:OrdersService/RegisterChangeObjectResponse")]
         void RegisterChangeObject(VotGESOrders.OrdersService.OrderObject newObject);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterChangeObject", ReplyAction="urn:OrdersService/RegisterChangeObjectResponse")]
-        System.Threading.Tasks.Task RegisterChangeObjectAsync(VotGESOrders.OrdersService.OrderObject newObject);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterChangeObject", ReplyAction="urn:OrdersService/RegisterChangeObjectResponse")]
+        System.IAsyncResult BeginRegisterChangeObject(VotGESOrders.OrdersService.OrderObject newObject, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterChangeObject(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterDeleteObject", ReplyAction="urn:OrdersService/RegisterDeleteObjectResponse")]
         void RegisterDeleteObject(VotGESOrders.OrdersService.OrderObject newObject);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterDeleteObject", ReplyAction="urn:OrdersService/RegisterDeleteObjectResponse")]
-        System.Threading.Tasks.Task RegisterDeleteObjectAsync(VotGESOrders.OrdersService.OrderObject newObject);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterDeleteObject", ReplyAction="urn:OrdersService/RegisterDeleteObjectResponse")]
+        System.IAsyncResult BeginRegisterDeleteObject(VotGESOrders.OrdersService.OrderObject newObject, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterDeleteObject(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterChangeUser", ReplyAction="urn:OrdersService/RegisterChangeUserResponse")]
         void RegisterChangeUser(VotGESOrders.OrdersService.OrdersUser newObject);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterChangeUser", ReplyAction="urn:OrdersService/RegisterChangeUserResponse")]
-        System.Threading.Tasks.Task RegisterChangeUserAsync(VotGESOrders.OrdersService.OrdersUser newObject);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterChangeUser", ReplyAction="urn:OrdersService/RegisterChangeUserResponse")]
+        System.IAsyncResult BeginRegisterChangeUser(VotGESOrders.OrdersService.OrdersUser newObject, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterChangeUser(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterDeleteUser", ReplyAction="urn:OrdersService/RegisterDeleteUserResponse")]
         void RegisterDeleteUser(VotGESOrders.OrdersService.OrdersUser newObject);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:OrdersService/RegisterDeleteUser", ReplyAction="urn:OrdersService/RegisterDeleteUserResponse")]
-        System.Threading.Tasks.Task RegisterDeleteUserAsync(VotGESOrders.OrdersService.OrdersUser newObject);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="urn:OrdersService/RegisterDeleteUser", ReplyAction="urn:OrdersService/RegisterDeleteUserResponse")]
+        System.IAsyncResult BeginRegisterDeleteUser(VotGESOrders.OrdersService.OrdersUser newObject, System.AsyncCallback callback, object asyncState);
+        
+        void EndRegisterDeleteUser(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3229,7 +3527,333 @@ namespace VotGESOrders.OrdersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class InitFilterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public InitFilterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public VotGESOrders.OrdersService.OrderFilter Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((VotGESOrders.OrdersService.OrderFilter)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class InitOrderInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public InitOrderInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public VotGESOrders.OrdersService.OrderInfo Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((VotGESOrders.OrdersService.OrderInfo)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoadOrdersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoadOrdersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetFilteredOrdersFromFilterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetFilteredOrdersFromFilterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetFilteredOrdersFromFilterToMailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetFilteredOrdersFromFilterToMailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoadOrdersUsersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoadOrdersUsersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoadOrderObjectsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoadOrderObjectsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ExistsChangesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ExistsChangesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class OrdersServiceClient : System.ServiceModel.ClientBase<VotGESOrders.OrdersService.OrdersService>, VotGESOrders.OrdersService.OrdersService {
+        
+        private BeginOperationDelegate onBeginInitFilterDelegate;
+        
+        private EndOperationDelegate onEndInitFilterDelegate;
+        
+        private System.Threading.SendOrPostCallback onInitFilterCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInitOrderInfoDelegate;
+        
+        private EndOperationDelegate onEndInitOrderInfoDelegate;
+        
+        private System.Threading.SendOrPostCallback onInitOrderInfoCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLoadOrdersDelegate;
+        
+        private EndOperationDelegate onEndLoadOrdersDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoadOrdersCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetFilteredOrdersFromFilterDelegate;
+        
+        private EndOperationDelegate onEndGetFilteredOrdersFromFilterDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetFilteredOrdersFromFilterCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetFilteredOrdersFromFilterToMailDelegate;
+        
+        private EndOperationDelegate onEndGetFilteredOrdersFromFilterToMailDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetFilteredOrdersFromFilterToMailCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLoadOrdersUsersDelegate;
+        
+        private EndOperationDelegate onEndLoadOrdersUsersDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoadOrdersUsersCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLoadOrderObjectsDelegate;
+        
+        private EndOperationDelegate onEndLoadOrderObjectsDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoadOrderObjectsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterNewDelegate;
+        
+        private EndOperationDelegate onEndRegisterNewDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterNewCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterChangeOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterChangeOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterChangeOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterAcceptOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterAcceptOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterAcceptOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterBanOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterBanOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterBanOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterCancelOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterCancelOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterCancelOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterOpenOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterOpenOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterOpenOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterCloseOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterCloseOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterCloseOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterCompleteOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterCompleteOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterCompleteOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterRejectReviewOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterRejectReviewOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterRejectReviewOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterRejectCancelOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterRejectCancelOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterRejectCancelOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterRejectOpenOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterRejectOpenOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterRejectOpenOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterRejectCloseOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterRejectCloseOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterRejectCloseOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterRejectCompleteOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterRejectCompleteOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterRejectCompleteOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterEditOrderDelegate;
+        
+        private EndOperationDelegate onEndRegisterEditOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterEditOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterAddCommentDelegate;
+        
+        private EndOperationDelegate onEndRegisterAddCommentDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterAddCommentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginReloadOrderDelegate;
+        
+        private EndOperationDelegate onEndReloadOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onReloadOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginExistsChangesDelegate;
+        
+        private EndOperationDelegate onEndExistsChangesDelegate;
+        
+        private System.Threading.SendOrPostCallback onExistsChangesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUpdateOrderObjectDelegate;
+        
+        private EndOperationDelegate onEndUpdateOrderObjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdateOrderObjectCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterChangeObjectDelegate;
+        
+        private EndOperationDelegate onEndRegisterChangeObjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterChangeObjectCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterDeleteObjectDelegate;
+        
+        private EndOperationDelegate onEndRegisterDeleteObjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterDeleteObjectCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterChangeUserDelegate;
+        
+        private EndOperationDelegate onEndRegisterChangeUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterChangeUserCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginRegisterDeleteUserDelegate;
+        
+        private EndOperationDelegate onEndRegisterDeleteUserDelegate;
+        
+        private System.Threading.SendOrPostCallback onRegisterDeleteUserCompletedDelegate;
         
         public OrdersServiceClient() {
         }
@@ -3250,236 +3874,1521 @@ namespace VotGESOrders.OrdersService {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<InitFilterCompletedEventArgs> InitFilterCompleted;
+        
+        public event System.EventHandler<InitOrderInfoCompletedEventArgs> InitOrderInfoCompleted;
+        
+        public event System.EventHandler<LoadOrdersCompletedEventArgs> LoadOrdersCompleted;
+        
+        public event System.EventHandler<GetFilteredOrdersFromFilterCompletedEventArgs> GetFilteredOrdersFromFilterCompleted;
+        
+        public event System.EventHandler<GetFilteredOrdersFromFilterToMailCompletedEventArgs> GetFilteredOrdersFromFilterToMailCompleted;
+        
+        public event System.EventHandler<LoadOrdersUsersCompletedEventArgs> LoadOrdersUsersCompleted;
+        
+        public event System.EventHandler<LoadOrderObjectsCompletedEventArgs> LoadOrderObjectsCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterNewCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterChangeOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterAcceptOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterBanOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterCancelOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterOpenOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterCloseOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterCompleteOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterRejectReviewOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterRejectCancelOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterRejectOpenOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterRejectCloseOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterRejectCompleteOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterEditOrderCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterAddCommentCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> ReloadOrderCompleted;
+        
+        public event System.EventHandler<ExistsChangesCompletedEventArgs> ExistsChangesCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> UpdateOrderObjectCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterChangeObjectCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterDeleteObjectCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterChangeUserCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> RegisterDeleteUserCompleted;
+        
         public VotGESOrders.OrdersService.OrderFilter InitFilter() {
             return base.Channel.InitFilter();
         }
         
-        public System.Threading.Tasks.Task<VotGESOrders.OrdersService.OrderFilter> InitFilterAsync() {
-            return base.Channel.InitFilterAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInitFilter(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInitFilter(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public VotGESOrders.OrdersService.OrderFilter EndInitFilter(System.IAsyncResult result) {
+            return base.Channel.EndInitFilter(result);
+        }
+        
+        private System.IAsyncResult OnBeginInitFilter(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInitFilter(callback, asyncState);
+        }
+        
+        private object[] OnEndInitFilter(System.IAsyncResult result) {
+            VotGESOrders.OrdersService.OrderFilter retVal = this.EndInitFilter(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInitFilterCompleted(object state) {
+            if ((this.InitFilterCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.InitFilterCompleted(this, new InitFilterCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void InitFilterAsync() {
+            this.InitFilterAsync(null);
+        }
+        
+        public void InitFilterAsync(object userState) {
+            if ((this.onBeginInitFilterDelegate == null)) {
+                this.onBeginInitFilterDelegate = new BeginOperationDelegate(this.OnBeginInitFilter);
+            }
+            if ((this.onEndInitFilterDelegate == null)) {
+                this.onEndInitFilterDelegate = new EndOperationDelegate(this.OnEndInitFilter);
+            }
+            if ((this.onInitFilterCompletedDelegate == null)) {
+                this.onInitFilterCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInitFilterCompleted);
+            }
+            base.InvokeAsync(this.onBeginInitFilterDelegate, null, this.onEndInitFilterDelegate, this.onInitFilterCompletedDelegate, userState);
         }
         
         public VotGESOrders.OrdersService.OrderInfo InitOrderInfo() {
             return base.Channel.InitOrderInfo();
         }
         
-        public System.Threading.Tasks.Task<VotGESOrders.OrdersService.OrderInfo> InitOrderInfoAsync() {
-            return base.Channel.InitOrderInfoAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInitOrderInfo(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInitOrderInfo(callback, asyncState);
         }
         
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.Order> LoadOrders(System.Guid guid) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public VotGESOrders.OrdersService.OrderInfo EndInitOrderInfo(System.IAsyncResult result) {
+            return base.Channel.EndInitOrderInfo(result);
+        }
+        
+        private System.IAsyncResult OnBeginInitOrderInfo(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInitOrderInfo(callback, asyncState);
+        }
+        
+        private object[] OnEndInitOrderInfo(System.IAsyncResult result) {
+            VotGESOrders.OrdersService.OrderInfo retVal = this.EndInitOrderInfo(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInitOrderInfoCompleted(object state) {
+            if ((this.InitOrderInfoCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.InitOrderInfoCompleted(this, new InitOrderInfoCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void InitOrderInfoAsync() {
+            this.InitOrderInfoAsync(null);
+        }
+        
+        public void InitOrderInfoAsync(object userState) {
+            if ((this.onBeginInitOrderInfoDelegate == null)) {
+                this.onBeginInitOrderInfoDelegate = new BeginOperationDelegate(this.OnBeginInitOrderInfo);
+            }
+            if ((this.onEndInitOrderInfoDelegate == null)) {
+                this.onEndInitOrderInfoDelegate = new EndOperationDelegate(this.OnEndInitOrderInfo);
+            }
+            if ((this.onInitOrderInfoCompletedDelegate == null)) {
+                this.onInitOrderInfoCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInitOrderInfoCompleted);
+            }
+            base.InvokeAsync(this.onBeginInitOrderInfoDelegate, null, this.onEndInitOrderInfoDelegate, this.onInitOrderInfoCompletedDelegate, userState);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> LoadOrders(System.Guid guid) {
             return base.Channel.LoadOrders(guid);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.Order>> LoadOrdersAsync(System.Guid guid) {
-            return base.Channel.LoadOrdersAsync(guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLoadOrders(System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLoadOrders(guid, callback, asyncState);
         }
         
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.Order> GetFilteredOrdersFromFilter(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> EndLoadOrders(System.IAsyncResult result) {
+            return base.Channel.EndLoadOrders(result);
+        }
+        
+        private System.IAsyncResult OnBeginLoadOrders(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Guid guid = ((System.Guid)(inValues[0]));
+            return this.BeginLoadOrders(guid, callback, asyncState);
+        }
+        
+        private object[] OnEndLoadOrders(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> retVal = this.EndLoadOrders(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoadOrdersCompleted(object state) {
+            if ((this.LoadOrdersCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoadOrdersCompleted(this, new LoadOrdersCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoadOrdersAsync(System.Guid guid) {
+            this.LoadOrdersAsync(guid, null);
+        }
+        
+        public void LoadOrdersAsync(System.Guid guid, object userState) {
+            if ((this.onBeginLoadOrdersDelegate == null)) {
+                this.onBeginLoadOrdersDelegate = new BeginOperationDelegate(this.OnBeginLoadOrders);
+            }
+            if ((this.onEndLoadOrdersDelegate == null)) {
+                this.onEndLoadOrdersDelegate = new EndOperationDelegate(this.OnEndLoadOrders);
+            }
+            if ((this.onLoadOrdersCompletedDelegate == null)) {
+                this.onLoadOrdersCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadOrdersCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoadOrdersDelegate, new object[] {
+                        guid}, this.onEndLoadOrdersDelegate, this.onLoadOrdersCompletedDelegate, userState);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> GetFilteredOrdersFromFilter(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid) {
             return base.Channel.GetFilteredOrdersFromFilter(Filter, guid);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.Order>> GetFilteredOrdersFromFilterAsync(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid) {
-            return base.Channel.GetFilteredOrdersFromFilterAsync(Filter, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetFilteredOrdersFromFilter(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetFilteredOrdersFromFilter(Filter, guid, callback, asyncState);
         }
         
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.Order> GetFilteredOrdersFromFilterToMail(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid) {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> EndGetFilteredOrdersFromFilter(System.IAsyncResult result) {
+            return base.Channel.EndGetFilteredOrdersFromFilter(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetFilteredOrdersFromFilter(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.OrderFilter Filter = ((VotGESOrders.OrdersService.OrderFilter)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginGetFilteredOrdersFromFilter(Filter, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndGetFilteredOrdersFromFilter(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> retVal = this.EndGetFilteredOrdersFromFilter(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetFilteredOrdersFromFilterCompleted(object state) {
+            if ((this.GetFilteredOrdersFromFilterCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetFilteredOrdersFromFilterCompleted(this, new GetFilteredOrdersFromFilterCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetFilteredOrdersFromFilterAsync(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid) {
+            this.GetFilteredOrdersFromFilterAsync(Filter, guid, null);
+        }
+        
+        public void GetFilteredOrdersFromFilterAsync(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid, object userState) {
+            if ((this.onBeginGetFilteredOrdersFromFilterDelegate == null)) {
+                this.onBeginGetFilteredOrdersFromFilterDelegate = new BeginOperationDelegate(this.OnBeginGetFilteredOrdersFromFilter);
+            }
+            if ((this.onEndGetFilteredOrdersFromFilterDelegate == null)) {
+                this.onEndGetFilteredOrdersFromFilterDelegate = new EndOperationDelegate(this.OnEndGetFilteredOrdersFromFilter);
+            }
+            if ((this.onGetFilteredOrdersFromFilterCompletedDelegate == null)) {
+                this.onGetFilteredOrdersFromFilterCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFilteredOrdersFromFilterCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetFilteredOrdersFromFilterDelegate, new object[] {
+                        Filter,
+                        guid}, this.onEndGetFilteredOrdersFromFilterDelegate, this.onGetFilteredOrdersFromFilterCompletedDelegate, userState);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> GetFilteredOrdersFromFilterToMail(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid) {
             return base.Channel.GetFilteredOrdersFromFilterToMail(Filter, guid);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.Order>> GetFilteredOrdersFromFilterToMailAsync(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid) {
-            return base.Channel.GetFilteredOrdersFromFilterToMailAsync(Filter, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetFilteredOrdersFromFilterToMail(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetFilteredOrdersFromFilterToMail(Filter, guid, callback, asyncState);
         }
         
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.OrdersUser> LoadOrdersUsers() {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> EndGetFilteredOrdersFromFilterToMail(System.IAsyncResult result) {
+            return base.Channel.EndGetFilteredOrdersFromFilterToMail(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetFilteredOrdersFromFilterToMail(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.OrderFilter Filter = ((VotGESOrders.OrdersService.OrderFilter)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginGetFilteredOrdersFromFilterToMail(Filter, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndGetFilteredOrdersFromFilterToMail(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.Order> retVal = this.EndGetFilteredOrdersFromFilterToMail(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetFilteredOrdersFromFilterToMailCompleted(object state) {
+            if ((this.GetFilteredOrdersFromFilterToMailCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetFilteredOrdersFromFilterToMailCompleted(this, new GetFilteredOrdersFromFilterToMailCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetFilteredOrdersFromFilterToMailAsync(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid) {
+            this.GetFilteredOrdersFromFilterToMailAsync(Filter, guid, null);
+        }
+        
+        public void GetFilteredOrdersFromFilterToMailAsync(VotGESOrders.OrdersService.OrderFilter Filter, System.Guid guid, object userState) {
+            if ((this.onBeginGetFilteredOrdersFromFilterToMailDelegate == null)) {
+                this.onBeginGetFilteredOrdersFromFilterToMailDelegate = new BeginOperationDelegate(this.OnBeginGetFilteredOrdersFromFilterToMail);
+            }
+            if ((this.onEndGetFilteredOrdersFromFilterToMailDelegate == null)) {
+                this.onEndGetFilteredOrdersFromFilterToMailDelegate = new EndOperationDelegate(this.OnEndGetFilteredOrdersFromFilterToMail);
+            }
+            if ((this.onGetFilteredOrdersFromFilterToMailCompletedDelegate == null)) {
+                this.onGetFilteredOrdersFromFilterToMailCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFilteredOrdersFromFilterToMailCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetFilteredOrdersFromFilterToMailDelegate, new object[] {
+                        Filter,
+                        guid}, this.onEndGetFilteredOrdersFromFilterToMailDelegate, this.onGetFilteredOrdersFromFilterToMailCompletedDelegate, userState);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> LoadOrdersUsers() {
             return base.Channel.LoadOrdersUsers();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.OrdersUser>> LoadOrdersUsersAsync() {
-            return base.Channel.LoadOrdersUsersAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLoadOrdersUsers(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLoadOrdersUsers(callback, asyncState);
         }
         
-        public System.Collections.Generic.List<VotGESOrders.OrdersService.OrderObject> LoadOrderObjects() {
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> EndLoadOrdersUsers(System.IAsyncResult result) {
+            return base.Channel.EndLoadOrdersUsers(result);
+        }
+        
+        private System.IAsyncResult OnBeginLoadOrdersUsers(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginLoadOrdersUsers(callback, asyncState);
+        }
+        
+        private object[] OnEndLoadOrdersUsers(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrdersUser> retVal = this.EndLoadOrdersUsers(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoadOrdersUsersCompleted(object state) {
+            if ((this.LoadOrdersUsersCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoadOrdersUsersCompleted(this, new LoadOrdersUsersCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoadOrdersUsersAsync() {
+            this.LoadOrdersUsersAsync(null);
+        }
+        
+        public void LoadOrdersUsersAsync(object userState) {
+            if ((this.onBeginLoadOrdersUsersDelegate == null)) {
+                this.onBeginLoadOrdersUsersDelegate = new BeginOperationDelegate(this.OnBeginLoadOrdersUsers);
+            }
+            if ((this.onEndLoadOrdersUsersDelegate == null)) {
+                this.onEndLoadOrdersUsersDelegate = new EndOperationDelegate(this.OnEndLoadOrdersUsers);
+            }
+            if ((this.onLoadOrdersUsersCompletedDelegate == null)) {
+                this.onLoadOrdersUsersCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadOrdersUsersCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoadOrdersUsersDelegate, null, this.onEndLoadOrdersUsersDelegate, this.onLoadOrdersUsersCompletedDelegate, userState);
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> LoadOrderObjects() {
             return base.Channel.LoadOrderObjects();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<VotGESOrders.OrdersService.OrderObject>> LoadOrderObjectsAsync() {
-            return base.Channel.LoadOrderObjectsAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLoadOrderObjects(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLoadOrderObjects(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> EndLoadOrderObjects(System.IAsyncResult result) {
+            return base.Channel.EndLoadOrderObjects(result);
+        }
+        
+        private System.IAsyncResult OnBeginLoadOrderObjects(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginLoadOrderObjects(callback, asyncState);
+        }
+        
+        private object[] OnEndLoadOrderObjects(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<VotGESOrders.OrdersService.OrderObject> retVal = this.EndLoadOrderObjects(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoadOrderObjectsCompleted(object state) {
+            if ((this.LoadOrderObjectsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoadOrderObjectsCompleted(this, new LoadOrderObjectsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoadOrderObjectsAsync() {
+            this.LoadOrderObjectsAsync(null);
+        }
+        
+        public void LoadOrderObjectsAsync(object userState) {
+            if ((this.onBeginLoadOrderObjectsDelegate == null)) {
+                this.onBeginLoadOrderObjectsDelegate = new BeginOperationDelegate(this.OnBeginLoadOrderObjects);
+            }
+            if ((this.onEndLoadOrderObjectsDelegate == null)) {
+                this.onEndLoadOrderObjectsDelegate = new EndOperationDelegate(this.OnEndLoadOrderObjects);
+            }
+            if ((this.onLoadOrderObjectsCompletedDelegate == null)) {
+                this.onLoadOrderObjectsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadOrderObjectsCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoadOrderObjectsDelegate, null, this.onEndLoadOrderObjectsDelegate, this.onLoadOrderObjectsCompletedDelegate, userState);
         }
         
         public void RegisterNew(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterNew(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterNewAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterNewAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterNew(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterNew(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterNew(System.IAsyncResult result) {
+            base.Channel.EndRegisterNew(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterNew(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterNew(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterNew(System.IAsyncResult result) {
+            this.EndRegisterNew(result);
+            return null;
+        }
+        
+        private void OnRegisterNewCompleted(object state) {
+            if ((this.RegisterNewCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterNewCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterNewAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterNewAsync(order, guid, null);
+        }
+        
+        public void RegisterNewAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterNewDelegate == null)) {
+                this.onBeginRegisterNewDelegate = new BeginOperationDelegate(this.OnBeginRegisterNew);
+            }
+            if ((this.onEndRegisterNewDelegate == null)) {
+                this.onEndRegisterNewDelegate = new EndOperationDelegate(this.OnEndRegisterNew);
+            }
+            if ((this.onRegisterNewCompletedDelegate == null)) {
+                this.onRegisterNewCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterNewCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterNewDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterNewDelegate, this.onRegisterNewCompletedDelegate, userState);
         }
         
         public void RegisterChangeOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterChangeOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterChangeOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterChangeOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterChangeOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterChangeOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterChangeOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterChangeOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterChangeOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterChangeOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterChangeOrder(System.IAsyncResult result) {
+            this.EndRegisterChangeOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterChangeOrderCompleted(object state) {
+            if ((this.RegisterChangeOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterChangeOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterChangeOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterChangeOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterChangeOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterChangeOrderDelegate == null)) {
+                this.onBeginRegisterChangeOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterChangeOrder);
+            }
+            if ((this.onEndRegisterChangeOrderDelegate == null)) {
+                this.onEndRegisterChangeOrderDelegate = new EndOperationDelegate(this.OnEndRegisterChangeOrder);
+            }
+            if ((this.onRegisterChangeOrderCompletedDelegate == null)) {
+                this.onRegisterChangeOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterChangeOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterChangeOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterChangeOrderDelegate, this.onRegisterChangeOrderCompletedDelegate, userState);
         }
         
         public void RegisterAcceptOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterAcceptOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterAcceptOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterAcceptOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterAcceptOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterAcceptOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterAcceptOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterAcceptOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterAcceptOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterAcceptOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterAcceptOrder(System.IAsyncResult result) {
+            this.EndRegisterAcceptOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterAcceptOrderCompleted(object state) {
+            if ((this.RegisterAcceptOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterAcceptOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterAcceptOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterAcceptOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterAcceptOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterAcceptOrderDelegate == null)) {
+                this.onBeginRegisterAcceptOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterAcceptOrder);
+            }
+            if ((this.onEndRegisterAcceptOrderDelegate == null)) {
+                this.onEndRegisterAcceptOrderDelegate = new EndOperationDelegate(this.OnEndRegisterAcceptOrder);
+            }
+            if ((this.onRegisterAcceptOrderCompletedDelegate == null)) {
+                this.onRegisterAcceptOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterAcceptOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterAcceptOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterAcceptOrderDelegate, this.onRegisterAcceptOrderCompletedDelegate, userState);
         }
         
         public void RegisterBanOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterBanOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterBanOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterBanOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterBanOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterBanOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterBanOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterBanOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterBanOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterBanOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterBanOrder(System.IAsyncResult result) {
+            this.EndRegisterBanOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterBanOrderCompleted(object state) {
+            if ((this.RegisterBanOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterBanOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterBanOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterBanOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterBanOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterBanOrderDelegate == null)) {
+                this.onBeginRegisterBanOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterBanOrder);
+            }
+            if ((this.onEndRegisterBanOrderDelegate == null)) {
+                this.onEndRegisterBanOrderDelegate = new EndOperationDelegate(this.OnEndRegisterBanOrder);
+            }
+            if ((this.onRegisterBanOrderCompletedDelegate == null)) {
+                this.onRegisterBanOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterBanOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterBanOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterBanOrderDelegate, this.onRegisterBanOrderCompletedDelegate, userState);
         }
         
         public void RegisterCancelOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterCancelOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterCancelOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterCancelOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterCancelOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterCancelOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterCancelOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterCancelOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterCancelOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterCancelOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterCancelOrder(System.IAsyncResult result) {
+            this.EndRegisterCancelOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterCancelOrderCompleted(object state) {
+            if ((this.RegisterCancelOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterCancelOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterCancelOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterCancelOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterCancelOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterCancelOrderDelegate == null)) {
+                this.onBeginRegisterCancelOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterCancelOrder);
+            }
+            if ((this.onEndRegisterCancelOrderDelegate == null)) {
+                this.onEndRegisterCancelOrderDelegate = new EndOperationDelegate(this.OnEndRegisterCancelOrder);
+            }
+            if ((this.onRegisterCancelOrderCompletedDelegate == null)) {
+                this.onRegisterCancelOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterCancelOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterCancelOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterCancelOrderDelegate, this.onRegisterCancelOrderCompletedDelegate, userState);
         }
         
         public void RegisterOpenOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterOpenOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterOpenOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterOpenOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterOpenOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterOpenOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterOpenOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterOpenOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterOpenOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterOpenOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterOpenOrder(System.IAsyncResult result) {
+            this.EndRegisterOpenOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterOpenOrderCompleted(object state) {
+            if ((this.RegisterOpenOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterOpenOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterOpenOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterOpenOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterOpenOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterOpenOrderDelegate == null)) {
+                this.onBeginRegisterOpenOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterOpenOrder);
+            }
+            if ((this.onEndRegisterOpenOrderDelegate == null)) {
+                this.onEndRegisterOpenOrderDelegate = new EndOperationDelegate(this.OnEndRegisterOpenOrder);
+            }
+            if ((this.onRegisterOpenOrderCompletedDelegate == null)) {
+                this.onRegisterOpenOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterOpenOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterOpenOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterOpenOrderDelegate, this.onRegisterOpenOrderCompletedDelegate, userState);
         }
         
         public void RegisterCloseOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterCloseOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterCloseOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterCloseOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterCloseOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterCloseOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterCloseOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterCloseOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterCloseOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterCloseOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterCloseOrder(System.IAsyncResult result) {
+            this.EndRegisterCloseOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterCloseOrderCompleted(object state) {
+            if ((this.RegisterCloseOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterCloseOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterCloseOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterCloseOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterCloseOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterCloseOrderDelegate == null)) {
+                this.onBeginRegisterCloseOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterCloseOrder);
+            }
+            if ((this.onEndRegisterCloseOrderDelegate == null)) {
+                this.onEndRegisterCloseOrderDelegate = new EndOperationDelegate(this.OnEndRegisterCloseOrder);
+            }
+            if ((this.onRegisterCloseOrderCompletedDelegate == null)) {
+                this.onRegisterCloseOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterCloseOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterCloseOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterCloseOrderDelegate, this.onRegisterCloseOrderCompletedDelegate, userState);
         }
         
         public void RegisterCompleteOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterCompleteOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterCompleteOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterCompleteOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterCompleteOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterCompleteOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterCompleteOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterCompleteOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterCompleteOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterCompleteOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterCompleteOrder(System.IAsyncResult result) {
+            this.EndRegisterCompleteOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterCompleteOrderCompleted(object state) {
+            if ((this.RegisterCompleteOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterCompleteOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterCompleteOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterCompleteOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterCompleteOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterCompleteOrderDelegate == null)) {
+                this.onBeginRegisterCompleteOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterCompleteOrder);
+            }
+            if ((this.onEndRegisterCompleteOrderDelegate == null)) {
+                this.onEndRegisterCompleteOrderDelegate = new EndOperationDelegate(this.OnEndRegisterCompleteOrder);
+            }
+            if ((this.onRegisterCompleteOrderCompletedDelegate == null)) {
+                this.onRegisterCompleteOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterCompleteOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterCompleteOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterCompleteOrderDelegate, this.onRegisterCompleteOrderCompletedDelegate, userState);
         }
         
         public void RegisterRejectReviewOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterRejectReviewOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterRejectReviewOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterRejectReviewOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterRejectReviewOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterRejectReviewOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterRejectReviewOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterRejectReviewOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterRejectReviewOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterRejectReviewOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterRejectReviewOrder(System.IAsyncResult result) {
+            this.EndRegisterRejectReviewOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterRejectReviewOrderCompleted(object state) {
+            if ((this.RegisterRejectReviewOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterRejectReviewOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterRejectReviewOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterRejectReviewOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterRejectReviewOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterRejectReviewOrderDelegate == null)) {
+                this.onBeginRegisterRejectReviewOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterRejectReviewOrder);
+            }
+            if ((this.onEndRegisterRejectReviewOrderDelegate == null)) {
+                this.onEndRegisterRejectReviewOrderDelegate = new EndOperationDelegate(this.OnEndRegisterRejectReviewOrder);
+            }
+            if ((this.onRegisterRejectReviewOrderCompletedDelegate == null)) {
+                this.onRegisterRejectReviewOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterRejectReviewOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterRejectReviewOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterRejectReviewOrderDelegate, this.onRegisterRejectReviewOrderCompletedDelegate, userState);
         }
         
         public void RegisterRejectCancelOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterRejectCancelOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterRejectCancelOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterRejectCancelOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterRejectCancelOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterRejectCancelOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterRejectCancelOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterRejectCancelOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterRejectCancelOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterRejectCancelOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterRejectCancelOrder(System.IAsyncResult result) {
+            this.EndRegisterRejectCancelOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterRejectCancelOrderCompleted(object state) {
+            if ((this.RegisterRejectCancelOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterRejectCancelOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterRejectCancelOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterRejectCancelOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterRejectCancelOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterRejectCancelOrderDelegate == null)) {
+                this.onBeginRegisterRejectCancelOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterRejectCancelOrder);
+            }
+            if ((this.onEndRegisterRejectCancelOrderDelegate == null)) {
+                this.onEndRegisterRejectCancelOrderDelegate = new EndOperationDelegate(this.OnEndRegisterRejectCancelOrder);
+            }
+            if ((this.onRegisterRejectCancelOrderCompletedDelegate == null)) {
+                this.onRegisterRejectCancelOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterRejectCancelOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterRejectCancelOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterRejectCancelOrderDelegate, this.onRegisterRejectCancelOrderCompletedDelegate, userState);
         }
         
         public void RegisterRejectOpenOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterRejectOpenOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterRejectOpenOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterRejectOpenOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterRejectOpenOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterRejectOpenOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterRejectOpenOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterRejectOpenOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterRejectOpenOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterRejectOpenOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterRejectOpenOrder(System.IAsyncResult result) {
+            this.EndRegisterRejectOpenOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterRejectOpenOrderCompleted(object state) {
+            if ((this.RegisterRejectOpenOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterRejectOpenOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterRejectOpenOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterRejectOpenOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterRejectOpenOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterRejectOpenOrderDelegate == null)) {
+                this.onBeginRegisterRejectOpenOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterRejectOpenOrder);
+            }
+            if ((this.onEndRegisterRejectOpenOrderDelegate == null)) {
+                this.onEndRegisterRejectOpenOrderDelegate = new EndOperationDelegate(this.OnEndRegisterRejectOpenOrder);
+            }
+            if ((this.onRegisterRejectOpenOrderCompletedDelegate == null)) {
+                this.onRegisterRejectOpenOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterRejectOpenOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterRejectOpenOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterRejectOpenOrderDelegate, this.onRegisterRejectOpenOrderCompletedDelegate, userState);
         }
         
         public void RegisterRejectCloseOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterRejectCloseOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterRejectCloseOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterRejectCloseOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterRejectCloseOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterRejectCloseOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterRejectCloseOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterRejectCloseOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterRejectCloseOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterRejectCloseOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterRejectCloseOrder(System.IAsyncResult result) {
+            this.EndRegisterRejectCloseOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterRejectCloseOrderCompleted(object state) {
+            if ((this.RegisterRejectCloseOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterRejectCloseOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterRejectCloseOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterRejectCloseOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterRejectCloseOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterRejectCloseOrderDelegate == null)) {
+                this.onBeginRegisterRejectCloseOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterRejectCloseOrder);
+            }
+            if ((this.onEndRegisterRejectCloseOrderDelegate == null)) {
+                this.onEndRegisterRejectCloseOrderDelegate = new EndOperationDelegate(this.OnEndRegisterRejectCloseOrder);
+            }
+            if ((this.onRegisterRejectCloseOrderCompletedDelegate == null)) {
+                this.onRegisterRejectCloseOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterRejectCloseOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterRejectCloseOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterRejectCloseOrderDelegate, this.onRegisterRejectCloseOrderCompletedDelegate, userState);
         }
         
         public void RegisterRejectCompleteOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterRejectCompleteOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterRejectCompleteOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterRejectCompleteOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterRejectCompleteOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterRejectCompleteOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterRejectCompleteOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterRejectCompleteOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterRejectCompleteOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterRejectCompleteOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterRejectCompleteOrder(System.IAsyncResult result) {
+            this.EndRegisterRejectCompleteOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterRejectCompleteOrderCompleted(object state) {
+            if ((this.RegisterRejectCompleteOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterRejectCompleteOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterRejectCompleteOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterRejectCompleteOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterRejectCompleteOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterRejectCompleteOrderDelegate == null)) {
+                this.onBeginRegisterRejectCompleteOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterRejectCompleteOrder);
+            }
+            if ((this.onEndRegisterRejectCompleteOrderDelegate == null)) {
+                this.onEndRegisterRejectCompleteOrderDelegate = new EndOperationDelegate(this.OnEndRegisterRejectCompleteOrder);
+            }
+            if ((this.onRegisterRejectCompleteOrderCompletedDelegate == null)) {
+                this.onRegisterRejectCompleteOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterRejectCompleteOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterRejectCompleteOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterRejectCompleteOrderDelegate, this.onRegisterRejectCompleteOrderCompletedDelegate, userState);
         }
         
         public void RegisterEditOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.RegisterEditOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterEditOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.RegisterEditOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterEditOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterEditOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterEditOrder(System.IAsyncResult result) {
+            base.Channel.EndRegisterEditOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterEditOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginRegisterEditOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterEditOrder(System.IAsyncResult result) {
+            this.EndRegisterEditOrder(result);
+            return null;
+        }
+        
+        private void OnRegisterEditOrderCompleted(object state) {
+            if ((this.RegisterEditOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterEditOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterEditOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.RegisterEditOrderAsync(order, guid, null);
+        }
+        
+        public void RegisterEditOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterEditOrderDelegate == null)) {
+                this.onBeginRegisterEditOrderDelegate = new BeginOperationDelegate(this.OnBeginRegisterEditOrder);
+            }
+            if ((this.onEndRegisterEditOrderDelegate == null)) {
+                this.onEndRegisterEditOrderDelegate = new EndOperationDelegate(this.OnEndRegisterEditOrder);
+            }
+            if ((this.onRegisterEditOrderCompletedDelegate == null)) {
+                this.onRegisterEditOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterEditOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterEditOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndRegisterEditOrderDelegate, this.onRegisterEditOrderCompletedDelegate, userState);
         }
         
         public void RegisterAddComment(VotGESOrders.OrdersService.Order order, string commentText, System.Guid guid) {
             base.Channel.RegisterAddComment(order, commentText, guid);
         }
         
-        public System.Threading.Tasks.Task RegisterAddCommentAsync(VotGESOrders.OrdersService.Order order, string commentText, System.Guid guid) {
-            return base.Channel.RegisterAddCommentAsync(order, commentText, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterAddComment(VotGESOrders.OrdersService.Order order, string commentText, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterAddComment(order, commentText, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterAddComment(System.IAsyncResult result) {
+            base.Channel.EndRegisterAddComment(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterAddComment(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            string commentText = ((string)(inValues[1]));
+            System.Guid guid = ((System.Guid)(inValues[2]));
+            return this.BeginRegisterAddComment(order, commentText, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterAddComment(System.IAsyncResult result) {
+            this.EndRegisterAddComment(result);
+            return null;
+        }
+        
+        private void OnRegisterAddCommentCompleted(object state) {
+            if ((this.RegisterAddCommentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterAddCommentCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterAddCommentAsync(VotGESOrders.OrdersService.Order order, string commentText, System.Guid guid) {
+            this.RegisterAddCommentAsync(order, commentText, guid, null);
+        }
+        
+        public void RegisterAddCommentAsync(VotGESOrders.OrdersService.Order order, string commentText, System.Guid guid, object userState) {
+            if ((this.onBeginRegisterAddCommentDelegate == null)) {
+                this.onBeginRegisterAddCommentDelegate = new BeginOperationDelegate(this.OnBeginRegisterAddComment);
+            }
+            if ((this.onEndRegisterAddCommentDelegate == null)) {
+                this.onEndRegisterAddCommentDelegate = new EndOperationDelegate(this.OnEndRegisterAddComment);
+            }
+            if ((this.onRegisterAddCommentCompletedDelegate == null)) {
+                this.onRegisterAddCommentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterAddCommentCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterAddCommentDelegate, new object[] {
+                        order,
+                        commentText,
+                        guid}, this.onEndRegisterAddCommentDelegate, this.onRegisterAddCommentCompletedDelegate, userState);
         }
         
         public void ReloadOrder(VotGESOrders.OrdersService.Order order, System.Guid guid) {
             base.Channel.ReloadOrder(order, guid);
         }
         
-        public System.Threading.Tasks.Task ReloadOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
-            return base.Channel.ReloadOrderAsync(order, guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginReloadOrder(VotGESOrders.OrdersService.Order order, System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginReloadOrder(order, guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndReloadOrder(System.IAsyncResult result) {
+            base.Channel.EndReloadOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginReloadOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.Order order = ((VotGESOrders.OrdersService.Order)(inValues[0]));
+            System.Guid guid = ((System.Guid)(inValues[1]));
+            return this.BeginReloadOrder(order, guid, callback, asyncState);
+        }
+        
+        private object[] OnEndReloadOrder(System.IAsyncResult result) {
+            this.EndReloadOrder(result);
+            return null;
+        }
+        
+        private void OnReloadOrderCompleted(object state) {
+            if ((this.ReloadOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ReloadOrderCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ReloadOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid) {
+            this.ReloadOrderAsync(order, guid, null);
+        }
+        
+        public void ReloadOrderAsync(VotGESOrders.OrdersService.Order order, System.Guid guid, object userState) {
+            if ((this.onBeginReloadOrderDelegate == null)) {
+                this.onBeginReloadOrderDelegate = new BeginOperationDelegate(this.OnBeginReloadOrder);
+            }
+            if ((this.onEndReloadOrderDelegate == null)) {
+                this.onEndReloadOrderDelegate = new EndOperationDelegate(this.OnEndReloadOrder);
+            }
+            if ((this.onReloadOrderCompletedDelegate == null)) {
+                this.onReloadOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnReloadOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginReloadOrderDelegate, new object[] {
+                        order,
+                        guid}, this.onEndReloadOrderDelegate, this.onReloadOrderCompletedDelegate, userState);
         }
         
         public bool ExistsChanges(System.Guid guid) {
             return base.Channel.ExistsChanges(guid);
         }
         
-        public System.Threading.Tasks.Task<bool> ExistsChangesAsync(System.Guid guid) {
-            return base.Channel.ExistsChangesAsync(guid);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginExistsChanges(System.Guid guid, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginExistsChanges(guid, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndExistsChanges(System.IAsyncResult result) {
+            return base.Channel.EndExistsChanges(result);
+        }
+        
+        private System.IAsyncResult OnBeginExistsChanges(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Guid guid = ((System.Guid)(inValues[0]));
+            return this.BeginExistsChanges(guid, callback, asyncState);
+        }
+        
+        private object[] OnEndExistsChanges(System.IAsyncResult result) {
+            bool retVal = this.EndExistsChanges(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnExistsChangesCompleted(object state) {
+            if ((this.ExistsChangesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ExistsChangesCompleted(this, new ExistsChangesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ExistsChangesAsync(System.Guid guid) {
+            this.ExistsChangesAsync(guid, null);
+        }
+        
+        public void ExistsChangesAsync(System.Guid guid, object userState) {
+            if ((this.onBeginExistsChangesDelegate == null)) {
+                this.onBeginExistsChangesDelegate = new BeginOperationDelegate(this.OnBeginExistsChanges);
+            }
+            if ((this.onEndExistsChangesDelegate == null)) {
+                this.onEndExistsChangesDelegate = new EndOperationDelegate(this.OnEndExistsChanges);
+            }
+            if ((this.onExistsChangesCompletedDelegate == null)) {
+                this.onExistsChangesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnExistsChangesCompleted);
+            }
+            base.InvokeAsync(this.onBeginExistsChangesDelegate, new object[] {
+                        guid}, this.onEndExistsChangesDelegate, this.onExistsChangesCompletedDelegate, userState);
         }
         
         public void UpdateOrderObject(VotGESOrders.OrdersService.OrderObject obj) {
             base.Channel.UpdateOrderObject(obj);
         }
         
-        public System.Threading.Tasks.Task UpdateOrderObjectAsync(VotGESOrders.OrdersService.OrderObject obj) {
-            return base.Channel.UpdateOrderObjectAsync(obj);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUpdateOrderObject(VotGESOrders.OrdersService.OrderObject obj, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdateOrderObject(obj, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndUpdateOrderObject(System.IAsyncResult result) {
+            base.Channel.EndUpdateOrderObject(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdateOrderObject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.OrderObject obj = ((VotGESOrders.OrdersService.OrderObject)(inValues[0]));
+            return this.BeginUpdateOrderObject(obj, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdateOrderObject(System.IAsyncResult result) {
+            this.EndUpdateOrderObject(result);
+            return null;
+        }
+        
+        private void OnUpdateOrderObjectCompleted(object state) {
+            if ((this.UpdateOrderObjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UpdateOrderObjectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UpdateOrderObjectAsync(VotGESOrders.OrdersService.OrderObject obj) {
+            this.UpdateOrderObjectAsync(obj, null);
+        }
+        
+        public void UpdateOrderObjectAsync(VotGESOrders.OrdersService.OrderObject obj, object userState) {
+            if ((this.onBeginUpdateOrderObjectDelegate == null)) {
+                this.onBeginUpdateOrderObjectDelegate = new BeginOperationDelegate(this.OnBeginUpdateOrderObject);
+            }
+            if ((this.onEndUpdateOrderObjectDelegate == null)) {
+                this.onEndUpdateOrderObjectDelegate = new EndOperationDelegate(this.OnEndUpdateOrderObject);
+            }
+            if ((this.onUpdateOrderObjectCompletedDelegate == null)) {
+                this.onUpdateOrderObjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateOrderObjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdateOrderObjectDelegate, new object[] {
+                        obj}, this.onEndUpdateOrderObjectDelegate, this.onUpdateOrderObjectCompletedDelegate, userState);
         }
         
         public void RegisterChangeObject(VotGESOrders.OrdersService.OrderObject newObject) {
             base.Channel.RegisterChangeObject(newObject);
         }
         
-        public System.Threading.Tasks.Task RegisterChangeObjectAsync(VotGESOrders.OrdersService.OrderObject newObject) {
-            return base.Channel.RegisterChangeObjectAsync(newObject);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterChangeObject(VotGESOrders.OrdersService.OrderObject newObject, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterChangeObject(newObject, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterChangeObject(System.IAsyncResult result) {
+            base.Channel.EndRegisterChangeObject(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterChangeObject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.OrderObject newObject = ((VotGESOrders.OrdersService.OrderObject)(inValues[0]));
+            return this.BeginRegisterChangeObject(newObject, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterChangeObject(System.IAsyncResult result) {
+            this.EndRegisterChangeObject(result);
+            return null;
+        }
+        
+        private void OnRegisterChangeObjectCompleted(object state) {
+            if ((this.RegisterChangeObjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterChangeObjectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterChangeObjectAsync(VotGESOrders.OrdersService.OrderObject newObject) {
+            this.RegisterChangeObjectAsync(newObject, null);
+        }
+        
+        public void RegisterChangeObjectAsync(VotGESOrders.OrdersService.OrderObject newObject, object userState) {
+            if ((this.onBeginRegisterChangeObjectDelegate == null)) {
+                this.onBeginRegisterChangeObjectDelegate = new BeginOperationDelegate(this.OnBeginRegisterChangeObject);
+            }
+            if ((this.onEndRegisterChangeObjectDelegate == null)) {
+                this.onEndRegisterChangeObjectDelegate = new EndOperationDelegate(this.OnEndRegisterChangeObject);
+            }
+            if ((this.onRegisterChangeObjectCompletedDelegate == null)) {
+                this.onRegisterChangeObjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterChangeObjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterChangeObjectDelegate, new object[] {
+                        newObject}, this.onEndRegisterChangeObjectDelegate, this.onRegisterChangeObjectCompletedDelegate, userState);
         }
         
         public void RegisterDeleteObject(VotGESOrders.OrdersService.OrderObject newObject) {
             base.Channel.RegisterDeleteObject(newObject);
         }
         
-        public System.Threading.Tasks.Task RegisterDeleteObjectAsync(VotGESOrders.OrdersService.OrderObject newObject) {
-            return base.Channel.RegisterDeleteObjectAsync(newObject);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterDeleteObject(VotGESOrders.OrdersService.OrderObject newObject, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterDeleteObject(newObject, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterDeleteObject(System.IAsyncResult result) {
+            base.Channel.EndRegisterDeleteObject(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterDeleteObject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.OrderObject newObject = ((VotGESOrders.OrdersService.OrderObject)(inValues[0]));
+            return this.BeginRegisterDeleteObject(newObject, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterDeleteObject(System.IAsyncResult result) {
+            this.EndRegisterDeleteObject(result);
+            return null;
+        }
+        
+        private void OnRegisterDeleteObjectCompleted(object state) {
+            if ((this.RegisterDeleteObjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterDeleteObjectCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterDeleteObjectAsync(VotGESOrders.OrdersService.OrderObject newObject) {
+            this.RegisterDeleteObjectAsync(newObject, null);
+        }
+        
+        public void RegisterDeleteObjectAsync(VotGESOrders.OrdersService.OrderObject newObject, object userState) {
+            if ((this.onBeginRegisterDeleteObjectDelegate == null)) {
+                this.onBeginRegisterDeleteObjectDelegate = new BeginOperationDelegate(this.OnBeginRegisterDeleteObject);
+            }
+            if ((this.onEndRegisterDeleteObjectDelegate == null)) {
+                this.onEndRegisterDeleteObjectDelegate = new EndOperationDelegate(this.OnEndRegisterDeleteObject);
+            }
+            if ((this.onRegisterDeleteObjectCompletedDelegate == null)) {
+                this.onRegisterDeleteObjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterDeleteObjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterDeleteObjectDelegate, new object[] {
+                        newObject}, this.onEndRegisterDeleteObjectDelegate, this.onRegisterDeleteObjectCompletedDelegate, userState);
         }
         
         public void RegisterChangeUser(VotGESOrders.OrdersService.OrdersUser newObject) {
             base.Channel.RegisterChangeUser(newObject);
         }
         
-        public System.Threading.Tasks.Task RegisterChangeUserAsync(VotGESOrders.OrdersService.OrdersUser newObject) {
-            return base.Channel.RegisterChangeUserAsync(newObject);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterChangeUser(VotGESOrders.OrdersService.OrdersUser newObject, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterChangeUser(newObject, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterChangeUser(System.IAsyncResult result) {
+            base.Channel.EndRegisterChangeUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterChangeUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.OrdersUser newObject = ((VotGESOrders.OrdersService.OrdersUser)(inValues[0]));
+            return this.BeginRegisterChangeUser(newObject, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterChangeUser(System.IAsyncResult result) {
+            this.EndRegisterChangeUser(result);
+            return null;
+        }
+        
+        private void OnRegisterChangeUserCompleted(object state) {
+            if ((this.RegisterChangeUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterChangeUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterChangeUserAsync(VotGESOrders.OrdersService.OrdersUser newObject) {
+            this.RegisterChangeUserAsync(newObject, null);
+        }
+        
+        public void RegisterChangeUserAsync(VotGESOrders.OrdersService.OrdersUser newObject, object userState) {
+            if ((this.onBeginRegisterChangeUserDelegate == null)) {
+                this.onBeginRegisterChangeUserDelegate = new BeginOperationDelegate(this.OnBeginRegisterChangeUser);
+            }
+            if ((this.onEndRegisterChangeUserDelegate == null)) {
+                this.onEndRegisterChangeUserDelegate = new EndOperationDelegate(this.OnEndRegisterChangeUser);
+            }
+            if ((this.onRegisterChangeUserCompletedDelegate == null)) {
+                this.onRegisterChangeUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterChangeUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterChangeUserDelegate, new object[] {
+                        newObject}, this.onEndRegisterChangeUserDelegate, this.onRegisterChangeUserCompletedDelegate, userState);
         }
         
         public void RegisterDeleteUser(VotGESOrders.OrdersService.OrdersUser newObject) {
             base.Channel.RegisterDeleteUser(newObject);
         }
         
-        public System.Threading.Tasks.Task RegisterDeleteUserAsync(VotGESOrders.OrdersService.OrdersUser newObject) {
-            return base.Channel.RegisterDeleteUserAsync(newObject);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginRegisterDeleteUser(VotGESOrders.OrdersService.OrdersUser newObject, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginRegisterDeleteUser(newObject, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndRegisterDeleteUser(System.IAsyncResult result) {
+            base.Channel.EndRegisterDeleteUser(result);
+        }
+        
+        private System.IAsyncResult OnBeginRegisterDeleteUser(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            VotGESOrders.OrdersService.OrdersUser newObject = ((VotGESOrders.OrdersService.OrdersUser)(inValues[0]));
+            return this.BeginRegisterDeleteUser(newObject, callback, asyncState);
+        }
+        
+        private object[] OnEndRegisterDeleteUser(System.IAsyncResult result) {
+            this.EndRegisterDeleteUser(result);
+            return null;
+        }
+        
+        private void OnRegisterDeleteUserCompleted(object state) {
+            if ((this.RegisterDeleteUserCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.RegisterDeleteUserCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void RegisterDeleteUserAsync(VotGESOrders.OrdersService.OrdersUser newObject) {
+            this.RegisterDeleteUserAsync(newObject, null);
+        }
+        
+        public void RegisterDeleteUserAsync(VotGESOrders.OrdersService.OrdersUser newObject, object userState) {
+            if ((this.onBeginRegisterDeleteUserDelegate == null)) {
+                this.onBeginRegisterDeleteUserDelegate = new BeginOperationDelegate(this.OnBeginRegisterDeleteUser);
+            }
+            if ((this.onEndRegisterDeleteUserDelegate == null)) {
+                this.onEndRegisterDeleteUserDelegate = new EndOperationDelegate(this.OnEndRegisterDeleteUser);
+            }
+            if ((this.onRegisterDeleteUserCompletedDelegate == null)) {
+                this.onRegisterDeleteUserCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnRegisterDeleteUserCompleted);
+            }
+            base.InvokeAsync(this.onBeginRegisterDeleteUserDelegate, new object[] {
+                        newObject}, this.onEndRegisterDeleteUserDelegate, this.onRegisterDeleteUserCompletedDelegate, userState);
         }
     }
 }

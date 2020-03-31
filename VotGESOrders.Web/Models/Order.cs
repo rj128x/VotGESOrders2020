@@ -18,6 +18,7 @@ namespace VotGESOrders.Web.Models
 
 
 	/*[CustomValidation(typeof(OrderValidator), "Validate")]*/
+
 	public class Order : INotifyPropertyChanged
 	{
 		public static string OrderCommentsDelim = "=======================================";
@@ -30,6 +31,7 @@ namespace VotGESOrders.Web.Models
 
 
 		private double parentOrderNumber;
+
 		public double ParentOrderNumber {
 			get { return parentOrderNumber; }
 			set {
@@ -957,22 +959,22 @@ namespace VotGESOrders.Web.Models
 
 		public bool HasComments { get; set; }
 
-		public bool AllowCloseOrder { get; protected set; }
-		public bool AllowOpenOrder { get; protected set; }
-		public bool AllowChangeOrder { get; protected set; }
-		public bool AllowReviewOrder { get; protected set; }
-		public bool AllowCompleteOrder { get; protected set; }
-		public bool AllowCompleteWithoutEnterOrder { get; protected set; }
-		public bool AllowExtendOrder { get; protected set; }
-		public bool AllowCancelOrder { get; protected set; }
-		public bool AllowCommentOrder { get; protected set; }
+		public bool AllowCloseOrder { get; set; }
+		public bool AllowOpenOrder { get; set; }
+		public bool AllowChangeOrder { get; set; }
+		public bool AllowReviewOrder { get; set; }
+		public bool AllowCompleteOrder { get; set; }
+		public bool AllowCompleteWithoutEnterOrder { get; set; }
+		public bool AllowExtendOrder { get; set; }
+		public bool AllowCancelOrder { get; set; }
+		public bool AllowCommentOrder { get; set; }
 
-		public bool AllowEditOrder { get; protected set; }
-		public bool AllowRejectReviewOrder { get; protected set; }
-		public bool AllowRejectOpenOrder { get; protected set; }
-		public bool AllowRejectCloseOrder { get; protected set; }
-		public bool AllowRejectCompleteOrder { get; protected set; }
-		public bool AllowRejectCancelOrder { get; protected set; }
+		public bool AllowEditOrder { get; set; }
+		public bool AllowRejectReviewOrder { get; set; }
+		public bool AllowRejectOpenOrder { get; set; }
+		public bool AllowRejectCloseOrder { get; set; }
+		public bool AllowRejectCompleteOrder { get; set; }
+		public bool AllowRejectCancelOrder { get; set; }
 		public OrderOperationEnum OrderOperation { get; set; }
 
 		[Display(Description = "Комментарий")]

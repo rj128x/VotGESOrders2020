@@ -10,7 +10,7 @@
 
         <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}">
             <Grid x:Name="ContentGrid">
-                <local:HomeControl x:Name="homeControl" Margin="0,20,0,0"/>
+                <local:HomeControl x:Name="homeControl" Margin="0,20,0,20"/>
 
             </Grid>
 

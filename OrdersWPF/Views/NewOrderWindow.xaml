@@ -4,9 +4,99 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VotGESOrders.Views"
+        xmlns:usr="clr-namespace:VotGESOrders.Views"
         mc:Ignorable="d"
         Title="NewOrderWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MaxWidth="150" Width="Auto"/>
+            <ColumnDefinition Width="420"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1" Grid.Row="0" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Заявка" HorizontalAlignment="Center"></TextBlock>
+            <Grid HorizontalAlignment="Stretch" Name="orderForm" 
+								VerticalAlignment="Stretch"  Grid.Row="1">
+                <StackPanel>
+                    <StackPanel >
+                        <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Тип заявки" Width="150"/>
+                                <ComboBox Name="cmbOrderTypes" SelectedValue="{Binding OrderType,Mode=TwoWay}" DisplayMemberPath="Value" 
+										 SelectedValuePath="Key" SelectionChanged="cmbOrderTypes_SelectionChanged"/>
+                                <TextBox Name="txtOrderType" Text="{Binding OrderTypeName,Mode=TwoWay}" IsEnabled="False"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Оборудование" Width="150"/>
+                            <TextBox Text="{Binding SelOrderObjectText,Mode=TwoWay}" TextWrapping="Wrap" IsEnabled="False"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Дополнительно" Width="150"/>
+                            <TextBox x:Name="txtAddInfo" Text="{Binding OrderObjectAddInfo,Mode=TwoWay}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <usr:DateTimePicker x:Name="PlanStartDatePicker" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <usr:DateTimePicker x:Name="PlanEndDatePicker" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <!--<sdk:AutoCompleteBox Name="cmbReadyTime" Text="{Binding ReadyTime, Mode=TwoWay}">
+
+                                </sdk:AutoCompleteBox>-->
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Текст" Width="150"/>
+                                <TextBox Text="{Binding OrderText, Mode=TwoWay}" Height="50"  AcceptsReturn="True" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Согласовано"/>
+                                <TextBox Text="{Binding AgreeText, Mode=TwoWay}" Height="50"  AcceptsReturn="True" TextWrapping="Wrap" IsEnabled="false"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Комментарий"/>
+                                <TextBox Text="{Binding CreateText, Mode=TwoWay}" Height="50"  AcceptsReturn="True" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="2" Grid.Row="0" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Оборудование" Grid.Row="0"  HorizontalAlignment="Center"/>
+            <TreeView Name="treeObjects" Grid.Row="1" ItemTemplate="{StaticResource treeTemplate}"  
+										  SelectedItemChanged="treeObjects_SelectedItemChanged" VerticalContentAlignment="Stretch"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="0" VerticalAlignment="Stretch" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Согласование" Grid.Row="0" HorizontalAlignment="Center"/>
+            <ListBox Name="lstUsers" Grid.Row="1" DisplayMemberPath="FullName" MouseLeftButtonUp="lstUsers_MouseLeftButtonUp"/>
+        </Grid>
+
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Button x:Name="CancelButton" Content="Отмена" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Grid.Row="1" />
+            <Button x:Name="OKButton" Content="ОК" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+        </StackPanel>
+
     </Grid>
 </Window>
